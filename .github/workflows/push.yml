@@ -29,10 +29,11 @@ jobs:
         echo "========= 开始转换JDHelloWorld的ts ========="
         #tsc ./*.ts
         tsc jx_nnfls.ts
-        tsc jd_homepageTW.ts        
+        tsc jd_homepageTW.ts
+        tsc TS_USER_AGENTS.ts
 
         cp ./jd_homepageTW.js ../
-
+        cp ./TS_USER_AGENTS.js ../
 
         #cp -f ./JDHelloWorld/*_*.js ./
         #cp -f ./JDHelloWorld/*_*.ts ./ts
