@@ -30,17 +30,20 @@ jobs:
         #tsc ./*.ts
         
         tsc jx_nnfls.ts
-        tsc jd_homepageTW.ts
+        tsc jd_tewu.ts
         tsc TS_USER_AGENTS.ts
+        tsc jd_jxmc.ts
 
         cp ./jx_nnfls.js ../
-        cp ./jd_homepageTW.js ../
+        cp ./jd_tewu.js ../
         cp ./TS_USER_AGENTS.js ../
+        cp ./jd_jxmc.js ../
 
         #cp -f ./JDHelloWorld/*_*.js ./
         #cp -f ./JDHelloWorld/*_*.ts ./ts
         rm -rf ./JDHelloWorld
         
+        echo "========= 转换完成 ========="
     - name: 'Commit Files'
       id: commit
       run: |
