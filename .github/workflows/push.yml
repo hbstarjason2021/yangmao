@@ -35,6 +35,7 @@ jobs:
         tsc jd_jxmc.ts
         tsc jd_xtg.ts
         tsc jd_cfd.ts
+        tsc jd_fruit_moreTask.ts
 
         cp ./jx_nnfls.js ../
         cp ./jd_tewu.js ../
@@ -42,6 +43,7 @@ jobs:
         cp ./jd_jxmc.js ../
         cp ./jd_xtg.js ../
         cp ./jd_cfd.js ../
+        cp ./jd_fruit_moreTask.js ../
 
         #cp -f ./JDHelloWorld/*_*.js ./
         #cp -f ./JDHelloWorld/*_*.ts ./ts
