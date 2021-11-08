@@ -37,6 +37,7 @@ jobs:
         tsc jd_cfd.ts
         tsc jd_fruit_moreTask.ts
         tsc jd_mofang.ts
+        tsc jd_speed_redEnvelope.ts
 
         cp ./jx_nnfls.js ../
         cp ./jd_tewu.js ../
@@ -46,6 +47,7 @@ jobs:
         cp ./jd_cfd.js ../
         cp ./jd_fruit_moreTask.js ../
         cp ./jd_mofang.js ../
+        cp ./jd_speed_redEnvelope.js ../
 
         #cp -f ./JDHelloWorld/*_*.js ./
         #cp -f ./JDHelloWorld/*_*.ts ./ts
