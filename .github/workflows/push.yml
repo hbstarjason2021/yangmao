@@ -43,6 +43,7 @@ jobs:
         #tsc jd_88hb.ts
         tsc jd_bean_box.ts
         tsc jd_jxmc.ts
+        tsc jd_health.ts
 
         cp ./jx_nnfls.js ../
         cp ./jd_tewu.js ../
@@ -58,6 +59,7 @@ jobs:
         #cp ./jd_88hb.js ../
         cp ./jd_bean_box.js ../
         cp ./jd_jxmc.js ../
+        cp ./jd_health.js ../
 
         #cp -f ./JDHelloWorld/*_*.js ./
         #cp -f ./JDHelloWorld/*_*.ts ./ts
