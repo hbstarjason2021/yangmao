@@ -30,7 +30,7 @@ jobs:
         #tsc ./*.ts
         
         tsc jx_nnfls.ts
-        tsc jd_tewu.ts
+        #tsc jd_tewu.ts
         tsc TS_USER_AGENTS.ts
         tsc jd_jxmc.ts
         #tsc jd_xtg.ts
@@ -46,7 +46,7 @@ jobs:
         tsc jd_health.ts
 
         cp ./jx_nnfls.js ../
-        cp ./jd_tewu.js ../
+        #cp ./jd_tewu.js ../
         cp ./TS_USER_AGENTS.js ../
         cp ./jd_jxmc.js ../
         #cp ./jd_xtg.js ../
