@@ -35,8 +35,35 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
+var __values = (this && this.__values) || function(o) {
+    var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
+    if (m) return m.call(o);
+    if (o && typeof o.length === "number") return {
+        next: function () {
+            if (o && i >= o.length) o = void 0;
+            return { value: o && o[i++], done: !o };
+        }
+    };
+    throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
+};
+var __read = (this && this.__read) || function (o, n) {
+    var m = typeof Symbol === "function" && o[Symbol.iterator];
+    if (!m) return o;
+    var i = m.call(o), r, ar = [], e;
+    try {
+        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+    }
+    catch (error) { e = { error: error }; }
+    finally {
+        try {
+            if (r && !r.done && (m = i["return"])) m.call(i);
+        }
+        finally { if (e) throw e.error; }
+    }
+    return ar;
+};
 exports.__esModule = true;
-exports.randomWord = exports.getShareCodePool = exports.getshareCodeHW = exports.randomNumString = exports.o2s = exports.resetHosts = exports.randomString = exports.exceptCookie = exports.h5st = exports.getJxToken = exports.decrypt = exports.requestAlgo = exports.getRandomNumberByRange = exports.wait = exports.requireConfig = exports.getFarmShareCode = exports.getBeanShareCode = exports.TotalBean = void 0;
+exports.jdpingou = exports.obj2str = exports.wechat_app_msg = exports.randomWord = exports.getShareCodePool = exports.getshareCodeHW = exports.randomNumString = exports.o2s = exports.resetHosts = exports.randomString = exports.exceptCookie = exports.h5st = exports.getJxToken = exports.decrypt = exports.requestAlgo = exports.getRandomNumberByRange = exports.wait = exports.requireConfig = exports.getFarmShareCode = exports.getBeanShareCode = exports.TotalBean = void 0;
 var axios_1 = require("axios");
 var ts_md5_1 = require("ts-md5");
 var date_fns_1 = require("date-fns");
@@ -102,7 +129,7 @@ function getBeanShareCode(cookie) {
         var data;
         return __generator(this, function (_c) {
             switch (_c.label) {
-                case 0: return [4 /*yield*/, axios_1["default"].post('https://api.m.jd.com/client.action', "functionId=plantBeanIndex&body=".concat(escape(JSON.stringify({ version: "9.0.0.1", "monitor_source": "plant_app_plant_index", "monitor_refer": "" })), "&appid=ld&client=apple&area=5_274_49707_49973&build=167283&clientVersion=9.1.0"), {
+                case 0: return [4 /*yield*/, axios_1["default"].post('https://api.m.jd.com/client.action', "functionId=plantBeanIndex&body=".concat(encodeURIComponent(JSON.stringify({ version: "9.0.0.1", "monitor_source": "plant_app_plant_index", "monitor_refer": "" })), "&appid=ld&client=apple&area=5_274_49707_49973&build=167283&clientVersion=9.1.0"), {
                         headers: {
                             Cookie: cookie,
                             Host: "api.m.jd.com",
@@ -128,7 +155,7 @@ function getFarmShareCode(cookie) {
         var data;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, axios_1["default"].post('https://api.m.jd.com/client.action?functionId=initForFarm', "body=".concat(escape(JSON.stringify({ "version": 4 })), "&appid=wh5&clientVersion=9.1.0"), {
+                case 0: return [4 /*yield*/, axios_1["default"].post('https://api.m.jd.com/client.action?functionId=initForFarm', "body=".concat(encodeURIComponent(JSON.stringify({ "version": 4 })), "&appid=wh5&clientVersion=9.1.0"), {
                         headers: {
                             "cookie": cookie,
                             "origin": "https://home.m.jd.com",
@@ -216,7 +243,6 @@ function requestAlgo(appId) {
                                 data = (_a.sent()).data;
                                 if (data['status'] === 200) {
                                     token = data.data.result.tk;
-                                    console.log('token:', token);
                                     enCryptMethodJDString = data.data.result.algo;
                                     if (enCryptMethodJDString)
                                         enCryptMethodJD = new Function("return ".concat(enCryptMethodJDString))();
@@ -246,7 +272,7 @@ function getQueryString(url, name) {
     var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
     var r = url.split('?')[1].match(reg);
     if (r != null)
-        return unescape(r[2]);
+        return decodeURIComponent(r[2]);
     return '';
 }
 function decrypt(stk, url, appId) {
@@ -271,10 +297,20 @@ function decrypt(stk, url, appId) {
 }
 exports.decrypt = decrypt;
 function h5st(url, stk, params, appId) {
+    var e_1, _a;
     if (appId === void 0) { appId = 10032; }
-    for (var _i = 0, _a = Object.entries(params); _i < _a.length; _i++) {
-        var _b = _a[_i], key = _b[0], val = _b[1];
-        url += "&".concat(key, "=").concat(val);
+    try {
+        for (var _b = __values(Object.entries(params)), _c = _b.next(); !_c.done; _c = _b.next()) {
+            var _d = __read(_c.value, 2), key = _d[0], val = _d[1];
+            url += "&".concat(key, "=").concat(val);
+        }
+    }
+    catch (e_1_1) { e_1 = { error: e_1_1 }; }
+    finally {
+        try {
+            if (_c && !_c.done && (_a = _b["return"])) _a.call(_b);
+        }
+        finally { if (e_1) throw e_1.error; }
     }
     url += '&h5st=' + decrypt(stk, url, appId);
     return url;
@@ -343,13 +379,13 @@ function randomNumString(e) {
 }
 exports.randomNumString = randomNumString;
 function randomWord() {
-    var t = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz', a = t.length, n = "";
+    var t = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', a = t.length;
     return t.charAt(Math.floor(Math.random() * a));
 }
 exports.randomWord = randomWord;
 function getshareCodeHW(key) {
     return __awaiter(this, void 0, void 0, function () {
-        var shareCodeHW, i, data, e_1;
+        var shareCodeHW, i, data, e_2;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -370,7 +406,7 @@ function getshareCodeHW(key) {
                     }
                     return [3 /*break*/, 6];
                 case 4:
-                    e_1 = _a.sent();
+                    e_2 = _a.sent();
                     console.log("getshareCodeHW Error, Retry...");
                     return [4 /*yield*/, wait(getRandomNumberByRange(2000, 6000))];
                 case 5:
@@ -387,7 +423,7 @@ function getshareCodeHW(key) {
 exports.getshareCodeHW = getshareCodeHW;
 function getShareCodePool(key, num) {
     return __awaiter(this, void 0, void 0, function () {
-        var shareCode, i, data, e_2;
+        var shareCode, i, data, e_3;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -409,7 +445,7 @@ function getShareCodePool(key, num) {
                     }
                     return [3 /*break*/, 6];
                 case 4:
-                    e_2 = _a.sent();
+                    e_3 = _a.sent();
                     console.log("getShareCodePool Error, Retry...");
                     return [4 /*yield*/, wait(getRandomNumberByRange(2000, 6000))];
                 case 5:
@@ -424,4 +460,95 @@ function getShareCodePool(key, num) {
     });
 }
 exports.getShareCodePool = getShareCodePool;
+function wechat_app_msg(title, content, user) {
+    return __awaiter(this, void 0, void 0, function () {
+        var corpid, corpsecret, gettoken, access_token, send;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    corpid = "", corpsecret = "";
+                    return [4 /*yield*/, axios_1["default"].get("https://qyapi.weixin.qq.com/cgi-bin/gettoken?corpid=".concat(corpid, "&corpsecret=").concat(corpsecret))];
+                case 1:
+                    gettoken = (_a.sent()).data;
+                    access_token = gettoken.access_token;
+                    return [4 /*yield*/, axios_1["default"].post("https://qyapi.weixin.qq.com/cgi-bin/message/send?access_token=".concat(access_token), {
+                            "touser": user,
+                            "msgtype": "text",
+                            "agentid": 1000002,
+                            "text": {
+                                "content": "".concat(title, "\n\n").concat(content)
+                            },
+                            "safe": 0
+                        })];
+                case 2:
+                    send = (_a.sent()).data;
+                    if (send.errcode === 0) {
+                        console.log('企业微信应用消息发送成功');
+                    }
+                    else {
+                        console.log('企业微信应用消息发送失败', send);
+                    }
+                    return [2 /*return*/];
+            }
+        });
+    });
+}
+exports.wechat_app_msg = wechat_app_msg;
+function obj2str(obj) {
+    return JSON.stringify(obj);
+}
+exports.obj2str = obj2str;
+function getDevice() {
+    return __awaiter(this, void 0, void 0, function () {
+        var data;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, axios_1["default"].get('https://betahub.cn/api/apple/devices/iPhone', {
+                        headers: {
+                            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36'
+                        }
+                    })];
+                case 1:
+                    data = (_a.sent()).data;
+                    data = data[getRandomNumberByRange(0, 16)];
+                    return [2 /*return*/, data.identifier];
+            }
+        });
+    });
+}
+function getVersion(device) {
+    return __awaiter(this, void 0, void 0, function () {
+        var data;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, axios_1["default"].get("https://betahub.cn/api/apple/firmwares/".concat(device), {
+                        headers: {
+                            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36'
+                        }
+                    })];
+                case 1:
+                    data = (_a.sent()).data;
+                    data = data[getRandomNumberByRange(0, data.length)];
+                    return [2 /*return*/, data.firmware_info.version];
+            }
+        });
+    });
+}
+function jdpingou() {
+    return __awaiter(this, void 0, void 0, function () {
+        var device, version;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, getDevice()];
+                case 1:
+                    device = _a.sent();
+                    return [4 /*yield*/, getVersion(device)];
+                case 2:
+                    version = _a.sent();
+                    return [2 /*return*/, "jdpingou;iPhone;5.19.0;".concat(version, ";").concat(randomString(40), ";network/wifi;model/").concat(device, ";appBuild/100833;ADID/;supportApplePay/1;hasUPPay/0;pushNoticeIsOpen/0;hasOCPay/0;supportBestPay/0;session/").concat(getRandomNumberByRange(10, 90), ";pap/JA2019_3111789;brand/apple;supportJDSHWK/1;Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148")];
+            }
+        });
+    });
+}
+exports.jdpingou = jdpingou;
 exports["default"] = USER_AGENT;
