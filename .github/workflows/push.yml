@@ -42,7 +42,7 @@ jobs:
         tsc jx_box.ts
         #tsc jd_88hb.ts
         tsc jd_bean_box.ts
-        tsc jd_health.ts
+        #########################tsc jd_health.ts
         tsc jd_tiger.ts
         tsc jd_ysq.ts
 
@@ -59,7 +59,7 @@ jobs:
         cp ./jx_box.js ../
         #cp ./jd_88hb.js ../
         cp ./jd_bean_box.js ../
-        cp ./jd_health.js ../
+        #########################cp ./jd_health.js ../
         cp ./jd_tiger.js ../
         cp ./jd_ysq.js ../
 
