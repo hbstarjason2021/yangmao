@@ -34,7 +34,7 @@ jobs:
         tsc TS_USER_AGENTS.ts
         #########################tsc jd_jxmc.ts
         #tsc jd_xtg.ts
-        tsc jd_cfd.ts
+        #########################tsc jd_cfd.ts
         tsc jd_cfd_shell.ts
         tsc jd_fruit_moreTask.ts
         tsc jd_mofang.ts
@@ -52,7 +52,7 @@ jobs:
         cp ./TS_USER_AGENTS.js ../
         #######################cp ./jd_jxmc.js ../
         #cp ./jd_xtg.js ../
-        cp ./jd_cfd.js ../
+        #######################cp ./jd_cfd.js ../
         cp ./jd_cfd_shell.js ../
         cp ./jd_fruit_moreTask.js ../
         cp ./jd_mofang.js ../
