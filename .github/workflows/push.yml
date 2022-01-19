@@ -32,7 +32,7 @@ jobs:
         tsc jx_nnfls.ts
         #tsc jd_tewu.ts
         tsc TS_USER_AGENTS.ts
-        tsc jd_jxmc.ts
+        #########################tsc jd_jxmc.ts
         #tsc jd_xtg.ts
         tsc jd_cfd.ts
         tsc jd_cfd_shell.ts
@@ -45,11 +45,12 @@ jobs:
         tsc jd_jxmc.ts
         tsc jd_health.ts
         tsc jd_tiger.ts
+        tsc jd_ysq.ts
 
         cp ./jx_nnfls.js ../
         #cp ./jd_tewu.js ../
         cp ./TS_USER_AGENTS.js ../
-        cp ./jd_jxmc.js ../
+        #######################cp ./jd_jxmc.js ../
         #cp ./jd_xtg.js ../
         cp ./jd_cfd.js ../
         cp ./jd_cfd_shell.js ../
@@ -62,6 +63,7 @@ jobs:
         cp ./jd_jxmc.js ../
         cp ./jd_health.js ../
         cp ./jd_tiger.js ../
+        cp ./jd_ysq.js ../
 
         #cp -f ./JDHelloWorld/*_*.js ./
         #cp -f ./JDHelloWorld/*_*.ts ./ts
