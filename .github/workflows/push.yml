@@ -43,7 +43,7 @@ jobs:
         #tsc jd_88hb.ts
         tsc jd_bean_box.ts
         #########################tsc jd_health.ts
-        tsc jd_tiger.ts
+        tsc jd_tiger.ts --downlevelIteration
         tsc jd_ysq.ts --downlevelIteration
 
         cp ./jx_nnfls.js ../
