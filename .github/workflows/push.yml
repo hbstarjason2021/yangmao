@@ -45,7 +45,7 @@ jobs:
         #########################tsc jd_health.ts
         #########################tsc jd_tiger.ts --downlevelIteration
         tsc jd_ysq.ts --downlevelIteration
-        tsc jd_jinli_hongbao.ts
+        tsc jd_jinli_hongbao.ts --downlevelIteration
 
         cp ./jx_nnfls.js ../
         #cp ./jd_tewu.js ../
