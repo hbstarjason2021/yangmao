@@ -30,7 +30,7 @@ jobs:
         #tsc ./*.ts
         
         tsc jx_nnfls.ts
-        tsc jd_tewu.ts
+        tsc jd_tewu.ts --downlevelIteration
         tsc TS_USER_AGENTS.ts
         #########################tsc jd_jxmc.ts
         #tsc jd_xtg.ts
