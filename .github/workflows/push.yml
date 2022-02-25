@@ -35,7 +35,7 @@ jobs:
         #########################tsc jd_jxmc.ts
         #tsc jd_xtg.ts
         #########################tsc jd_cfd.ts
-        tsc jd_cfd_shell.ts
+        #########################tsc jd_cfd_shell.ts
         ##########################tsc jd_fruit_moreTask.ts
         #tsc jd_mofang.ts
         #tsc jd_speed_redEnvelope.ts
@@ -53,7 +53,7 @@ jobs:
         #######################cp ./jd_jxmc.js ../
         #cp ./jd_xtg.js ../
         #######################cp ./jd_cfd.js ../
-        cp ./jd_cfd_shell.js ../
+        #######################cp ./jd_cfd_shell.js ../
         ######################cp ./jd_fruit_moreTask.js ../
         #cp ./jd_mofang.js ../
         #cp ./jd_speed_redEnvelope.js ../
