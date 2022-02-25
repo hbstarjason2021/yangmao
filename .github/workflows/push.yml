@@ -29,7 +29,7 @@ jobs:
         echo "========= 开始转换JDHelloWorld的ts ========="
         #tsc ./*.ts
         
-        tsc jx_nnfls.ts
+        #########################tsc jx_nnfls.ts
         tsc jd_tewu.ts --downlevelIteration
         tsc TS_USER_AGENTS.ts
         #########################tsc jd_jxmc.ts
@@ -47,7 +47,7 @@ jobs:
         tsc jd_ysq.ts --downlevelIteration
         tsc jd_jinli_hongbao.ts --downlevelIteration
 
-        cp ./jx_nnfls.js ../
+        #######################cp ./jx_nnfls.js ../
         cp ./jd_tewu.js ../
         cp ./TS_USER_AGENTS.js ../
         #######################cp ./jd_jxmc.js ../
