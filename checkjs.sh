@@ -160,7 +160,7 @@ for_diff_cron() {
 	fi
 }
 
-main(){
+
 yyds_Script
-}
+
 
