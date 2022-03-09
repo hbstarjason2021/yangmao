@@ -19,3 +19,10 @@ spec:
       containers:
       - image: hbstarjason/jd-scripts:latest
         name: jd-scripts
+        volumeMounts:
+          - mountPath: /all
+            name: jd1-env-all
+      volumes:
+        - name: jd1-env-all
+          configMap:
+            name: jd1-configmap-all
