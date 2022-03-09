@@ -20,7 +20,7 @@ spec:
       - image: hbstarjason/jd-scripts:latest
         name: jd-scripts
         volumeMounts:
-          - mountPath: /
+          - mountPath: /env
             name: jd1-env-all
       volumes:
         - name: jd1-env-all
