@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: jd1-configmap
+  name: jd1-configmap-all
 data:
   all: |
     PUSH_KEY=
