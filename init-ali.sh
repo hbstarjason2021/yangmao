@@ -37,3 +37,7 @@ install_helm() {
     fi	
 }
 
+install_kubectl
+install_helm
+
+
