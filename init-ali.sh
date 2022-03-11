@@ -27,7 +27,13 @@ install_kubectl() {
 }
 
 install_helm() {
+    if [ $? -ne 0 ]
+    then
+        echo "Installing Helm"
  	curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
-    helm version --client
+        helm version --client
+    else
+        echo "Helm is already installed"
+    fi	
 }
 
