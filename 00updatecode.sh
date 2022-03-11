@@ -5,6 +5,8 @@
 git clone https://gitee.com/starjason/sharecode && cd sharecode
 
 ################################
+
+echo "****** nnfls get code ******"
 cat <<  EOF > nnfls.json
 ["JD1_NNFLS","JD4_NNFLS","JD2_NNFLS","JD3_NNFLS"]
 EOF
@@ -26,9 +28,11 @@ sed -i "s/JD2_NNFLS/${jd2_nnfls}/g" nnfls.json
 sed -i "s/JD3_NNFLS/${jd3_nnfls}/g" nnfls.json
 sed -i "s/JD4_NNFLS/${jd4_nnfls}/g" nnfls.json
 
-echo "****** nnfls update success ******"
+echo "****** nnfls get success ******"
 
 ###################################
+
+echo "****** cfd get code ******"
 cat << EOF > cfd.json
 ["JD1_CFD","JD4_CFD","JD2_CFD","JD3_CFD"]
 EOF
@@ -50,6 +54,6 @@ sed -i "s/JD2_CFD/${jd2_cfd}/g" cfd.json
 sed -i "s/JD3_CFD/${jd3_cfd}/g" cfd.json
 sed -i "s/JD4_CFD/${jd4_cfd}/g" cfd.json
 
-echo "****** cfd update success ******"
+echo "****** cfd get success ******"
 
 ######################################
