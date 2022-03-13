@@ -21,6 +21,19 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
     _platform="linux"
 fi
 
+install_git () {
+  set +e
+  if [[ $(command -v snap >/dev/null; echo $?) -eq 0 ]];
+  then
+    sudo snap install git
+  elif [[ $(command -v apt-get >/dev/null; echo $?) -eq 0 ]];
+  then
+    sudo apt-get install git -y
+  else
+    sudo yum install git -y
+  fi
+  set -e
+}
 
 install_kubectl() {
     ## curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
@@ -42,6 +55,7 @@ install_helm() {
     fi	
 }
 
+install_git
 install_kubectl
 install_helm
 
