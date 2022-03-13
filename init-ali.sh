@@ -56,7 +56,9 @@ install_helm() {
     if [[ $(command -v helm >/dev/null; echo $?) -eq 0 ]];
     then
         echo "Installing Helm"
- 	curl -s https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
+ 	#curl -s https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
+	HELMVERSION=helm-v3.8.1
+	curl -sSL https://get.helm.sh/${HELMVERSION}-linux-amd64.tar.gz | sudo tar xz -C /usr/local/bin --strip-components=1 linux-amd64/helm
         helm version --client
     else
         echo -e "${green}Helm is already installed${white}"
