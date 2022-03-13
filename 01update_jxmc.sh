@@ -4,7 +4,9 @@ export PATH
 
 ## cd -P "$( dirname "$0"  )" && pwd 
 
-git clone https://gitee.com/starjason/sharecode && cd sharecode
+## git clone https://gitee.com/starjason/sharecode && cd sharecode
+
+git pull -r
 
 ################################
 
