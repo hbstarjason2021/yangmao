@@ -42,13 +42,13 @@ install_kubectl() {
     mv ./kubectl /usr/local/bin/kubectl
     /usr/local/bin/kubectl version --client
     ## kubectl completion bash | sudo tee /etc/bash_completion.d/kubectl > /dev/null
-    echo "${green}kubectl is already installed${white}"
+    echo -e "${green}kubectl is already installed${white}"
 }
 
 install_kubecolor() {
     KUBECOLOR_VERSION=0.0.20
     curl -sSL https://github.com/hidetatz/kubecolor/releases/download/v${KUBECOLOR_VERSION}/kubecolor_${KUBECOLOR_VERSION}_Linux_x86_64.tar.gz | sudo tar xz -C /usr/local/bin kubecolor
-    info "${green}kubecolor is already installed${white}"
+    echo -e "${green}kubecolor is already installed${white}"
 }
 
 install_helm() {
@@ -58,7 +58,7 @@ install_helm() {
  	curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
         helm version --client
     else
-        echo "${green}Helm is already installed${white}"
+        echo -e "${green}Helm is already installed${white}"
     fi	
 }
 
