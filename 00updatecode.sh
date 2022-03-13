@@ -57,3 +57,5 @@ sed -i "s/JD4_CFD/${jd4_cfd}/g" cfd.json
 echo "****** cfd get success ******"
 
 ######################################
+cd sharecode && pwd
+git status
