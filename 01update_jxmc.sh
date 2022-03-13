@@ -31,3 +31,5 @@ sed -i "s/JD1_JXMC/${jd1_jxmc}/g" jxmc.json
 sed -i "s/JD2_JXMC/${jd2_jxmc}/g" jxmc.json
 
 echo "****** jxmc get success ******"
+
+git status
