@@ -53,8 +53,7 @@ install_kubecolor() {
 }
 
 install_helm() {
-    if [[ $(command -v helm >/dev/null; echo $?) -eq 0 ]];
-    then
+    if (command -v helm >/dev/null 2>&1) then
         echo "Installing Helm"
  	#curl -s https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
 	HELMVERSION=helm-v3.8.1
