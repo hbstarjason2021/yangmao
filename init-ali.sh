@@ -48,6 +48,7 @@ install_kubectl() {
 install_kubecolor() {
     KUBECOLOR_VERSION=0.0.20
     curl -sSL https://github.com/hidetatz/kubecolor/releases/download/v${KUBECOLOR_VERSION}/kubecolor_${KUBECOLOR_VERSION}_Linux_x86_64.tar.gz | sudo tar xz -C /usr/local/bin kubecolor
+    kubecolor version --client
     echo -e "${green}kubecolor is already installed${white}"
 }
 
@@ -55,7 +56,7 @@ install_helm() {
     if [ $? -ne 0 ]
     then
         echo "Installing Helm"
- 	curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
+ 	curl -s https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
         helm version --client
     else
         echo -e "${green}Helm is already installed${white}"
