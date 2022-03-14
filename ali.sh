@@ -13,7 +13,8 @@ sudo curl -L "http://rancher-mirror.cnrancher.com/docker-compose/v1.27.4/docker-
    sudo chmod +x /usr/local/bin/docker-compose &&  docker-compose version && \
     git clone https://gitee.com/starjason/jd-scripts-docker/ && \
    cd jd-scripts-docker && ls -l  && \
- docker pull hbstarjason/jd-scripts
+ docker pull registry.cn-beijing.aliyuncs.com/hbstarjason/jd-scripts && \
+ docker tag registry.cn-beijing.aliyuncs.com/hbstarjason/jd-scripts  hbstarjason/jd-scripts
  
 docker images
  
