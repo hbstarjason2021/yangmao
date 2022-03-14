@@ -1,6 +1,6 @@
 #!/bin/bash
 
-### 
+### wget -qO- https://gitee.com/starjason/yangmao/raw/main/ali.sh | bash
 
 ###### https://developer.aliyun.com/adc/scenario/383702ab66f04463965dc9813177ab40?spm=a2c6h.13858375.0.0.7c3a79a9kgfMHg
 
@@ -15,6 +15,6 @@ sudo curl -L "http://rancher-mirror.cnrancher.com/docker-compose/v1.27.4/docker-
    cd jd-scripts-docker && ls -l  && \
  docker pull hbstarjason/jd-scripts
  
- docker images
+docker images
  
  
