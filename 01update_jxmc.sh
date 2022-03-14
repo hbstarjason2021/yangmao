@@ -34,3 +34,19 @@ sed -i "s/JD2_JXMC/${jd2_jxmc}/g" jxmc.json
 echo "****** jxmc get success ******"
 
 git status
+
+
+<< CONTENT
+
+	if [ ! -d $dir_file/git_clone/curtinlv_script ];then
+		echo ""
+		git clone https://github.com/curtinlv/JD-Script.git $dir_file/git_clone/curtinlv_script
+		curtinlv_script_setup
+	else
+		cd $dir_file/git_clone/curtinlv_script
+		git fetch --all
+		git reset --hard origin/main
+		curtinlv_script_setup
+	fi
+
+CONTENT
