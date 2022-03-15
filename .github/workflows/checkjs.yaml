@@ -25,7 +25,10 @@ jobs:
          cd /usr/share/Checkjs && chmod 755 checkjs.sh
          bash checkjs.sh
          
-         cd git_log
-         ls -l 
+         echo "==============================="
+         ls -l git_log
+         echo "==============================="
          current_time=$(date +"%Y-%m-%d")
+         echo ${current_time}
+         echo "==============================="
          cat ${current_time}.log
