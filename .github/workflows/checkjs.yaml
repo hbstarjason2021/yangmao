@@ -32,5 +32,6 @@ jobs:
          echo "==============================="
          current_time=$(date +"%Y-%m-%d-%k")
          echo ${current_time}
+         git_log_timme=(date +"%Y-%m-%d")
          echo "==============================="
-         cat git_log/${current_time}.log
+         cat git_log/${git_log_timme}.log
