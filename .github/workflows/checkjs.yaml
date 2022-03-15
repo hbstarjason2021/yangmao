@@ -30,7 +30,7 @@ jobs:
          echo "==============================="
          ls -l git_log
          echo "==============================="
-         current_time=$(date +"%Y-%m-%d")
+         current_time=$(date +"%Y-%m-%d-%k")
          echo ${current_time}
          echo "==============================="
          cat git_log/${current_time}.log
