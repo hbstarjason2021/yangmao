@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -euxv
+set -eux
 
 ### wget -qO- https://gitee.com/starjason/yangmao/raw/main/ali.sh | bash
 
