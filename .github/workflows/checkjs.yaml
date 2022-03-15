@@ -21,6 +21,8 @@ jobs:
     
     - name: Checkjs
       run: |
+         sudo timedatectl set-timezone 'Asia/Shanghai'
+         
          git clone https://github.com/ITdesk01/Checkjs.git /usr/share/Checkjs
          cd /usr/share/Checkjs && chmod 755 checkjs.sh
          bash checkjs.sh
