@@ -11,7 +11,7 @@ on:
   #    types: started   
 
 jobs:
-  checkin:
+  checkjs:
     runs-on: ubuntu-latest
     #if: github.event.repository.owner.id == github.event.sender.id
     # https://p3terx.com/archives/github-actions-manual-trigger.html
@@ -25,4 +25,7 @@ jobs:
          cd /usr/share/Checkjs && chmod 755 checkjs.sh
          bash checkjs.sh
          
-         #cat 
+         cd git_log
+         ls -l 
+         current_time=$(date +"%Y-%m-%d")
+         cat ${current_time}.log
