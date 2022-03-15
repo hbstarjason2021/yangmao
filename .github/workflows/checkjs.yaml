@@ -3,7 +3,7 @@ name: checkjs
 on:
   workflow_dispatch: 
   schedule:
-    - cron:  0 9,14 * * * 
+    - cron:  0 9,12,21 * * * 
       # 
       # https://tool.lu/crontab/
       # https://datetime360.com/cn/utc-cst-china-time/
