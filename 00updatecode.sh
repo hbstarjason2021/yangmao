@@ -1,5 +1,7 @@
 #!/bin/bash
 
+###### wget https://gitee.com/starjason/yangmao/raw/main/00updatecode.sh  && bash 00updatecode.sh
+
 ## cd -P "$( dirname "$0"  )" && pwd 
 
 git clone https://gitee.com/starjason/sharecode && cd sharecode
