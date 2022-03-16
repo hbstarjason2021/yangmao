@@ -21,6 +21,7 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
     _platform="linux"
 fi
 
+
 install_git () {
   set +e
   if [[ $(command -v snap >/dev/null; echo $?) -eq 0 ]];
@@ -61,9 +62,19 @@ install_helm() {
     echo -e "${green}Helm is already installed${white}"
 }
 
-install_git
+install_minikube() {
+    echo "Installing Minikube"
+    curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+    sudo install minikube-linux-amd64 /usr/local/bin/minikube
+    #MINIKUBEVERESION=
+    #curl -sSL "https://storage.googleapis.com/minikube/releases/${MINIKUBEVERESION#minikube-}/minikube-linux-amd64"
+    minikube version
+    echo -e "${green}Minikube is already installed${white}"
+}
+
+## install_git
 install_kubectl
 install_kubecolor
 install_helm
-
+install_minikube
 
