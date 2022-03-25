@@ -14,7 +14,7 @@ jobs:
       run: |
         sudo apt install rename -y
         sudo npm install -g typescript
-        #sudo npm install -t ts-node
+        #sudo npm install -g ts-node
     - name: down
       run: |
         echo "========= 开始下载JDHelloWorld的脚本 ========="
