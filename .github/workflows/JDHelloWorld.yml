@@ -46,7 +46,7 @@ jobs:
         #########################tsc jd_tiger.ts --downlevelIteration
         tsc jd_ysq.ts --downlevelIteration
         tsc jd_jinli_hongbao.ts --downlevelIteration
-        tsc jd_wechat_sign.ts
+        tsc jd_wechat_sign.ts --downlevelIteration
 
         #######################cp ./jx_nnfls.js ../
         cp ./jd_tewu.js ../
