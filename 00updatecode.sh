@@ -44,6 +44,10 @@ cat << EOF > cfd_new3.json
 {"shareId":["JD1_CFD","JD4_CFD","JD2_CFD","JD3_CFD"]}
 EOF
 
+cat << EOF > cfd_new3_2.json
+{"data":["JD1_CFD","JD4_CFD","JD2_CFD","JD3_CFD"],"code":200}
+EOF
+
 jd1_cfd=$(docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node gua_wealth_island_help.js' |grep "助力码:" | awk -F ":" '{print $5}')
 echo ${jd1_cfd}
 
