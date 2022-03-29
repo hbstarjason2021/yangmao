@@ -65,6 +65,16 @@ sed -i "s/JD2_CFD/${jd2_cfd}/g" cfd.json
 sed -i "s/JD3_CFD/${jd3_cfd}/g" cfd.json
 sed -i "s/JD4_CFD/${jd4_cfd}/g" cfd.json
 
+sed -i "s/JD1_CFD/${jd1_cfd}/g" cfd_new3.json
+sed -i "s/JD2_CFD/${jd2_cfd}/g" cfd_new3.json
+sed -i "s/JD3_CFD/${jd3_cfd}/g" cfd_new3.json
+sed -i "s/JD4_CFD/${jd4_cfd}/g" cfd_new3.json
+
+sed -i "s/JD1_CFD/${jd1_cfd}/g" cfd_new3_2.json
+sed -i "s/JD2_CFD/${jd2_cfd}/g" cfd_new3_2.json
+sed -i "s/JD3_CFD/${jd3_cfd}/g" cfd_new3_2.json
+sed -i "s/JD4_CFD/${jd4_cfd}/g" cfd_new3_2.json
+
 echo "****** cfd get success ******"
 
 ######################################
