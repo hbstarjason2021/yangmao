@@ -48,7 +48,7 @@ jobs:
         tsc jd_ysq.ts --downlevelIteration
         tsc jd_jinli_hongbao.ts --downlevelIteration
         tsc jd_wechat_sign.ts --downlevelIteration
-        tsc jd_cash.ts 
+        tsc jd_cash.ts --downlevelIteration
         
 
         #######################cp ./jx_nnfls.js ../
