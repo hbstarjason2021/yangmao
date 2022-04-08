@@ -7,6 +7,7 @@
 #cd /usr/share/Checkjs && chmod 755 checkjs.sh
 #bash checkjs.sh
 
+cd /usr/share/Checkjs/
 rm -f  checkjs-mod.sh
 wget https://raw.githubusercontent.com/hbstarjason2021/yangmao/main/checkjs-mod.sh
 chmod +x checkjs-mod.sh
