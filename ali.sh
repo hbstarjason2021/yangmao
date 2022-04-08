@@ -9,9 +9,12 @@ function install_git () {
   if [[ $(command -v yum >/dev/null; echo $?) -eq 0 ]];
   then
     sudo yum install git -y
-  elif [[ $(command -v apt-get >/dev/null; echo $?) -eq 0 ]];
-  then
-    sudo apt-get install git -y
+  else
+    if [[ $(command -v apt-get >/dev/null; echo $?) -eq 0 ]];
+       then
+       sudo apt-get install git -y
+    fi
+  fi  
 }
 
 ## apt -y install git
