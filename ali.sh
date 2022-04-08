@@ -6,14 +6,12 @@ set -eux
 ### wget -qO- https://raw.githubusercontent.com/hbstarjason2021/yangmao/main/ali.sh | bash
 
 function install_git () {
-  set +e
   if [[ $(command -v yum >/dev/null; echo $?) -eq 0 ]];
   then
     sudo yum install git -y
   elif [[ $(command -v apt-get >/dev/null; echo $?) -eq 0 ]];
   then
     sudo apt-get install git -y
-  set -e
 }
 
 ## apt -y install git
