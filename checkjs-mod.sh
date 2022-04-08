@@ -35,6 +35,24 @@ green="\033[32m"
 yellow="\033[33m"
 white="\033[0m"
 
+wulove_Script() {
+	cd $dir_file
+	Script_name="wulove_Script"
+	File_path="$dir_file/$Script_name"
+	Newfile="new_${Script_name}.txt"
+	Oldfile="old_${Script_name}.txt"
+	branch="master"
+	for_diff="0"
+	url_test="https://raw.githubusercontent.com/wulove/my_scripts/master/README.md"
+	if [ -d "$Script_name" ]; then
+		tongyong_config
+	else
+		git clone https://github.com/wulove/my_scripts.git wulove_Script
+		tongyong_config
+	fi
+
+}
+
 SuperManito_Script() {
 	cd $dir_file
 	Script_name="SuperManito_Script"
@@ -867,6 +885,7 @@ menu() {
 	echo -e "$yellow 检测脚本是否最新:$white $Script_status "
 	echo "**********************************************"
 	echo > $dir_file/git_log/${current_time}.log
+	wulove_Script
 	SuperManito_Script
 	curtinlv_script
 	smiek2221_Script
