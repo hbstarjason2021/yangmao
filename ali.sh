@@ -3,6 +3,7 @@
 set -eux
 
 ### wget -qO- https://gitee.com/starjason/yangmao/raw/main/ali.sh | bash
+### wget -qO- https://raw.githubusercontent.com/hbstarjason2021/yangmao/main/ali.sh | bash
 
 function install_git () {
   set +e
