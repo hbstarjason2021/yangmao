@@ -15,18 +15,11 @@ function install_git () {
   fi  
 }
 
-## apt -y install git
-## curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun && systemctl restart docker
+## lsb_release -i --short
 
-#function install_docker () {
-#  set +e
-#  if [[ $(command -v docker >/dev/null; echo $?) -eq 0 ]];
-#  then
-#    curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun && systemctl restart docker
-#  else
-#    docker info
-#  set -e
-#}
+## apt -y install git
+## yum -y install git
+## curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun && systemctl restart docker
 
 docker_install() {
     echo "检查Docker......"
@@ -48,7 +41,6 @@ docker_install() {
         fi
     fi
 }
-
 
 install_git
 
