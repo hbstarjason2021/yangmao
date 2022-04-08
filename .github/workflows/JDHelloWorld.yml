@@ -72,7 +72,7 @@ jobs:
         cp ./jd_wechat_sign.js ../
         cp ./jd_cash.js ../
         cp ./jd_joy_park_run.js ../
-        cp ./V3.js ../
+        cp ./utils/V3.js ../
 
         #cp -f ./JDHelloWorld/*_*.js ./
         #cp -f ./JDHelloWorld/*_*.ts ./ts
