@@ -4,11 +4,32 @@ set -eux
 
 ### wget -qO- https://gitee.com/starjason/yangmao/raw/main/ali.sh | bash
 
-###### https://developer.aliyun.com/adc/scenario/383702ab66f04463965dc9813177ab40?spm=a2c6h.13858375.0.0.7c3a79a9kgfMHg
+function install_git () {
+  set +e
+  if [[ $(command -v yum >/dev/null; echo $?) -eq 0 ]];
+  then
+    sudo yum install git -y
+  elif [[ $(command -v apt-get >/dev/null; echo $?) -eq 0 ]];
+  then
+    sudo apt-get install git -y
+  set -e
+}
 
-apt -y install git  && curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun && systemctl restart docker
+## apt -y install git
+## curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun && systemctl restart docker
 
-docker info 
+function install_docker () {
+  set +e
+  if [[ $(command -v docker >/dev/null; echo $?) -eq 0 ]];
+  then
+    curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun && systemctl restart docker
+  else
+    docker info
+  set -e
+}
+
+install_git
+install_docker
 
 sudo curl -L "http://rancher-mirror.cnrancher.com/docker-compose/v1.27.4/docker-compose-$(uname -s)-$(uname -m)"  \
    -o /usr/local/bin/docker-compose  && \
