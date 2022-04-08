@@ -2,6 +2,11 @@
 
 #set -x
 #set -u
+set -eux
+
+cd -P "$( dirname "$0"  )" && pwd 
+
+### wget https://raw.githubusercontent.com/hbstarjason2021/yangmao/main/run-checkjs.sh
 
 #git clone https://github.com/ITdesk01/Checkjs.git /usr/share/Checkjs
 #cd /usr/share/Checkjs && chmod 755 checkjs.sh
