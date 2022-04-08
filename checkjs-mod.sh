@@ -886,22 +886,22 @@ menu() {
 	echo "**********************************************"
 	echo > $dir_file/git_log/${current_time}.log
 	wulove_Script
-	SuperManito_Script
-	curtinlv_script
-	smiek2221_Script
-	ccwav
-	yyds_Script
 	KingRan_Script
 	JDWXX_Script
 	Github_6dylan6_Script
+	JDHelloWorld
+	zero205_Script
+	yuannian1112
+	smiek2221_Script
+	SuperManito_Script
+	curtinlv_script
+	ccwav
+	yyds_Script
 	cdle_carry_Script
 	X1a0He
 	star261
-	zero205_Script
 	Ariszy_Script
 	asd920
-	yuannian1112
-	JDHelloWorld
 	Aaron_Script
 	nianyuguai
 	fangpidedongsun
