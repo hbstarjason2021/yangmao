@@ -49,7 +49,7 @@ jobs:
         tsc jd_jinli_hongbao.ts --downlevelIteration
         tsc jd_wechat_sign.ts --downlevelIteration
         tsc jd_cash.ts --downlevelIteration
-        tsc jd_joy_park_run.ts
+        tsc jd_joy_park_run.ts --downlevelIteration
         
         #######################cp ./jx_nnfls.js ../
         cp ./jd_tewu.js ../
