@@ -125,6 +125,24 @@ KingRan_Script() {
 
 }
 
+he1pu_JDHelp() {
+	cd $dir_file
+	Script_name="he1pu_JDHelp"
+	File_path="$dir_file/$Script_name"
+	Newfile="new_${Script_name}.txt"
+	Oldfile="old_${Script_name}.txt"
+	branch="main"
+	for_diff="0"
+	url_test="https://raw.githubusercontent.com/he1pu/JDHelp/main/README.md"
+	if [ -d "$Script_name" ]; then
+		tongyong_config
+	else
+		git clone https://github.com/he1pu/JDHelp.git he1pu_JDHelp
+		tongyong_config
+	fi
+
+}
+
 Ariszy_Script() {
 	cd $dir_file
 	Script_name="Ariszy_Script"
@@ -886,6 +904,7 @@ menu() {
 	echo "**********************************************"
 	echo > $dir_file/git_log/${current_time}.log
 	wulove_Script
+	he1pu_JDHelp
 	KingRan_Script
 	JDWXX_Script
 	Github_6dylan6_Script
