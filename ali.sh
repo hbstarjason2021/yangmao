@@ -55,5 +55,7 @@ sudo curl -L "http://rancher-mirror.cnrancher.com/docker-compose/v1.27.4/docker-
  docker tag registry.cn-beijing.aliyuncs.com/hbstarjason/jd-scripts  hbstarjason/jd-scripts
  
 docker images
- 
+
+## docker rmi hbstarjason/jd-scripts
+## docker rmi registry.cn-beijing.aliyuncs.com/hbstarjason/jd-scripts
  
