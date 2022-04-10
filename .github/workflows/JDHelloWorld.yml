@@ -45,7 +45,7 @@ jobs:
         tsc jd_bean_box.ts
         #########################tsc jd_health.ts
         #########################tsc jd_tiger.ts --downlevelIteration
-        tsc jd_ysq.ts --downlevelIteration
+        #########################tsc jd_ysq.ts --downlevelIteration
         tsc jd_jinli_hongbao.ts --downlevelIteration
         tsc jd_wechat_sign.ts --downlevelIteration
         tsc jd_cash.ts --downlevelIteration
@@ -68,7 +68,7 @@ jobs:
         cp ./jd_bean_box.js ../
         #########################cp ./jd_health.js ../
         #########################cp ./jd_tiger.js ../
-        cp ./jd_ysq.js ../
+        #########################cp ./jd_ysq.js ../
         cp ./jd_jinli_hongbao.js ../
         cp ./jd_wechat_sign.js ../
         cp ./jd_cash.js ../
