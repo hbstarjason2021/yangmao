@@ -143,6 +143,24 @@ he1pu_JDHelp() {
 
 }
 
+jiulan_platypus() {
+	cd $dir_file
+	Script_name="jiulan_platypus"
+	File_path="$dir_file/$Script_name/JD"
+	Newfile="new_${Script_name}.txt"
+	Oldfile="old_${Script_name}.txt"
+	branch="main"
+	for_diff="0"
+	url_test="https://raw.githubusercontent.com/jiulan/platypus/main/README.md"
+	if [ -d "$Script_name" ]; then
+		tongyong_config
+	else
+		git clone -b $branch https://github.com/jiulan/platypus.git jiulan_platypus
+		tongyong_config
+	fi
+
+}
+
 Ariszy_Script() {
 	cd $dir_file
 	Script_name="Ariszy_Script"
@@ -919,6 +937,7 @@ menu() {
 	cdle_carry_Script
 	X1a0He
 	star261
+	jiulan_platypus
 	Ariszy_Script
 	asd920
 	Aaron_Script
