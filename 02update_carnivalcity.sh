@@ -19,16 +19,16 @@ cat <<  EOF > carnivalcity2
 EOF
 
 
-jd3_city=$(docker exec jd3 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_jxmc-new3.js' |grep "助力码" | head -n1 | awk  '{print $2}')
+jd3_city=$(docker exec jd3 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node getCarnivalcityCode.js' |grep gua-submit_codes |awk '{print $3}')
 echo ${jd3_city}
 
-jd4_jxmc=$(docker exec jd4 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_jxmc-new3.js' |grep "助力码" | head -n1 | awk  '{print $2}')
+jd4_city=$(docker exec jd4 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node getCarnivalcityCode.js' |grep gua-submit_codes |awk '{print $3}')
 echo ${jd4_city}
 
-jd1_jxmc=$(docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node getCarnivalcityCode.js' |grep gua-submit_codes |awk '{print $3}')
+jd1_city=$(docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node getCarnivalcityCode.js' |grep gua-submit_codes |awk '{print $3}')
 echo ${jd1_city}
 
-jd2_jxmc=$(docker exec jd2 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_jxmc-new3.js' |grep "助力码" | head -n1 | awk  '{print $2}')
+jd2_city=$(docker exec jd2 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node getCarnivalcityCode.js' |grep gua-submit_codes |awk '{print $3}')
 echo ${jd2_city}
 
 sed -i "s/JD3_CITY/${jd3_city}/g" carnivalcity
