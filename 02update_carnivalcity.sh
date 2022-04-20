@@ -45,9 +45,9 @@ sed -i "s/JD2_CITY/${jd2_city}/g" carnivalcity2
 
 echo "****** carnivalcity get success ******"
 
-/carnivalcity ${jd1_city}
-/carnivalcity ${jd2_city}
-/carnivalcity ${jd3_city}
-/carnivalcity ${jd4_city}
+echo "/carnivalcity ${jd1_city}"
+echo "/carnivalcity ${jd2_city}"
+echo "/carnivalcity ${jd3_city}"
+echo "/carnivalcity ${jd4_city}"
 
 git status
