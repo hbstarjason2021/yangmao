@@ -146,7 +146,7 @@ he1pu_JDHelp() {
 jiulan_platypus() {
 	cd $dir_file
 	Script_name="jiulan_platypus"
-	File_path="$dir_file/$Script_name/JD"
+	File_path="$dir_file/$Script_name"
 	Newfile="new_${Script_name}.txt"
 	Oldfile="old_${Script_name}.txt"
 	branch="main"
