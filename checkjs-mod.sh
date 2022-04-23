@@ -35,6 +35,24 @@ green="\033[32m"
 yellow="\033[33m"
 white="\033[0m"
 
+zyf1118_kevinxf() {
+	cd $dir_file
+	Script_name="zyf1118_kevinxf"
+	File_path="$dir_file/$Script_name"
+	Newfile="new_${Script_name}.txt"
+	Oldfile="old_${Script_name}.txt"
+	branch="main"
+	for_diff="0"
+	url_test="https://raw.githubusercontent.com/zyf1118/kevinxf/main/README.md"
+	if [ -d "$Script_name" ]; then
+		tongyong_config
+	else
+		git clone -b $branch https://github.com/zyf1118/kevinxf.git zyf1118_kevinxf
+		tongyong_config
+	fi
+
+}
+
 LingFeng0918() {
 	cd $dir_file
 	Script_name="LingFeng0918"
