@@ -35,6 +35,24 @@ green="\033[32m"
 yellow="\033[33m"
 white="\033[0m"
 
+LingFeng0918() {
+	cd $dir_file
+	Script_name="LingFeng0918"
+	File_path="$dir_file/$Script_name"
+	Newfile="new_${Script_name}.txt"
+	Oldfile="old_${Script_name}.txt"
+	branch="main"
+	for_diff="0"
+	url_test="https://raw.githubusercontent.com/LingFeng0918/LF_JD/main/README.md"
+	if [ -d "$Script_name" ]; then
+		tongyong_config
+	else
+		git clone -b $branch https://github.com/LingFeng0918/LF_JD.git LingFeng0918
+		tongyong_config
+	fi
+
+}
+
 wulove_Script() {
 	cd $dir_file
 	Script_name="wulove_Script"
@@ -922,6 +940,7 @@ menu() {
 	echo "**********************************************"
 	echo > $dir_file/git_log/${current_time}.log
 	wulove_Script
+	LingFeng0918
 	he1pu_JDHelp
 	KingRan_Script
 	JDWXX_Script
