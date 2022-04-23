@@ -21,6 +21,8 @@ function install_git () {
 ## yum -y install git
 ## curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun && systemctl restart docker
 
+## curl -fsSL get.docker.com -o get-docker.sh && sh get-docker.sh --mirror Aliyun && systemctl enable docker && systemctl start docker
+
 docker_install() {
     echo "检查Docker......"
     if [ -x "$(command -v docker)" ]; then
