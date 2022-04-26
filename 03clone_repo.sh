@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -eux
+
 IFS="@"
 
 REPO="https://github.com/hbstarjason2021/jd-scripts-docker@https://github.com/KingRan/KR"
