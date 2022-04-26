@@ -9,5 +9,5 @@ REPO_ARR=($REPO)
 
 for repolist  in ${REPO_ARR[@]}
 do 
-  git clone repo 
+  git clone repolist
 done 
