@@ -2,11 +2,10 @@
 
 IFS="@"
 
-repo="https://github.com/hbstarjason2021/jd-scripts-docker@https://github.com/KingRan/KR"
+REPO="https://github.com/hbstarjason2021/jd-scripts-docker@https://github.com/KingRan/KR"
 REPO_ARR=($REPO)
 
 for repolist  in ${REPO_ARR[@]}
-
 do 
-git clone repo 
+  git clone repo 
 done 
