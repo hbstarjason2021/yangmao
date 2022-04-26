@@ -36,7 +36,8 @@ docker_install() {
             #exit 1
         else
             echo "安装docker环境..."
-            curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
+            #curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
+            apt install docker.io -y
             echo "安装docker环境...安装完成!"
             systemctl enable docker
             systemctl start docker
