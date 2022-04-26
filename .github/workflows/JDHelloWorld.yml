@@ -52,6 +52,8 @@ jobs:
         #########################tsc jd_joy_park_run.ts --downlevelIteration
         tsc utils/V3.ts --downlevelIteration
         #########################tsc jd_carnivalcity_card.ts --downlevelIteration
+        tsc jd_fruit_help.ts --downlevelIteration
+        
         
         #######################cp ./jx_nnfls.js ../
         cp ./jd_tewu.js ../
@@ -75,6 +77,7 @@ jobs:
         #########################cp ./jd_joy_park_run.js ../
         cp ./utils/V3.js ../
         #########################cp ./jd_carnivalcity_card.js ../
+        cp ./jd_fruit_help.js ../
 
         #cp -f ./JDHelloWorld/*_*.js ./
         #cp -f ./JDHelloWorld/*_*.ts ./ts
