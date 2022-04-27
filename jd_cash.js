@@ -1,4 +1,12 @@
 "use strict";
+/**
+ * 京东-领现金
+ * 兼容panda api和本地sign
+ *
+ * 使用panda sign
+ * export PANDA_TOKEN=""
+ * 本地sign算法 import {getSign} from './test/sign'
+ */
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -64,9 +72,36 @@ var __read = (this && this.__read) || function (o, n) {
 };
 exports.__esModule = true;
 var TS_USER_AGENTS_1 = require("./TS_USER_AGENTS");
-require("dotenv/config");
-var cookie = '', res = '', data, UserName;
-var message = '', pandaToken = process.env.PANDA_TOKEN ? process.env.PANDA_TOKEN.split('&') : [];
+var fs_1 = require("fs");
+var cookie = '', res = '', data, UserName, PANDA_TOKEN = undefined, getSign = undefined;
+if ((0, fs_1.existsSync)('./test/sign.ts')) {
+    getSign = require('./test/sign').getSign;
+    console.log('使用本地sign');
+}
+else {
+    console.log('未找到本地sign');
+    PANDA_TOKEN = process.env.PANDA_TOKEN;
+    if (PANDA_TOKEN) {
+        console.log('使用panda api');
+        getSign = function (fn, body) { return __awaiter(void 0, void 0, void 0, function () {
+            var data;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, (0, TS_USER_AGENTS_1.post)('https://api.jds.codes/jd/sign', { 'fn': fn, 'body': body }, {
+                            'Authorization': "Bearer ".concat(PANDA_TOKEN)
+                        })];
+                    case 1:
+                        data = (_a.sent()).data;
+                        return [2 /*return*/, data.sign];
+                }
+            });
+        }); };
+    }
+    else {
+        console.log('未设置PANDA_TOKEN\n脚本退出');
+        process.exit(0);
+    }
+}
 !(function () { return __awaiter(void 0, void 0, void 0, function () {
     var cookiesArr, _loop_1, _a, _b, _c, index, value, e_1_1;
     var e_1, _d;
@@ -77,7 +112,7 @@ var message = '', pandaToken = process.env.PANDA_TOKEN ? process.env.PANDA_TOKEN
             case 1:
                 cookiesArr = _h.sent();
                 _loop_1 = function (index, value) {
-                    var type, otherTaskNum, taskNum, i, _j, _k, t, e_2_1, fs;
+                    var type, otherTaskNum, taskNum, i, _j, _k, t, e_2_1;
                     var e_2, _l;
                     return __generator(this, function (_m) {
                         switch (_m.label) {
@@ -85,11 +120,9 @@ var message = '', pandaToken = process.env.PANDA_TOKEN ? process.env.PANDA_TOKEN
                                 cookie = value;
                                 UserName = decodeURIComponent(cookie.match(/pt_pin=([^;]*)/)[1]);
                                 console.log("\n\u5F00\u59CB\u3010\u4EAC\u4E1C\u8D26\u53F7".concat(index + 1, "\u3011").concat(UserName, "\n"));
-                                message += "\u3010\u8D26\u53F7".concat(index + 1, "\u3011  ").concat(UserName, "\n");
                                 return [4 /*yield*/, api('cash_homePage', {})];
                             case 1:
                                 res = _m.sent();
-                                (0, TS_USER_AGENTS_1.o2s)(res);
                                 if (!(res.data.result.signedStatus !== 1)) return [3 /*break*/, 4];
                                 console.log('今日未签到');
                                 return [4 /*yield*/, api('cash_sign', { "remind": 0, "inviteCode": "", "type": 0, "breakReward": 0 })];
@@ -98,7 +131,7 @@ var message = '', pandaToken = process.env.PANDA_TOKEN ? process.env.PANDA_TOKEN
                                 return [4 /*yield*/, (0, TS_USER_AGENTS_1.wait)(1000)];
                             case 3:
                                 _m.sent();
-                                (0, TS_USER_AGENTS_1.o2s)(data, '签到成功');
+                                console.log('签到成功');
                                 _m.label = 4;
                             case 4: return [4 /*yield*/, api('cash_homePage', {})];
                             case 5:
@@ -117,7 +150,6 @@ var message = '', pandaToken = process.env.PANDA_TOKEN ? process.env.PANDA_TOKEN
                                 return [4 /*yield*/, api('cash_homePage', {})];
                             case 8:
                                 res = _m.sent();
-                                (0, TS_USER_AGENTS_1.o2s)(res);
                                 if (res.data.result.taskInfos.filter(function (item) { return type.includes(item.type) && item.doTimes === item.times; }).length === taskNum) {
                                     console.log('任务全部完成');
                                     return [3 /*break*/, 20];
@@ -143,7 +175,7 @@ var message = '', pandaToken = process.env.PANDA_TOKEN ? process.env.PANDA_TOKEN
                                     return [3 /*break*/, 14];
                                 }
                                 else {
-                                    (0, TS_USER_AGENTS_1.o2s)(data, '任务失败');
+                                    console.log('任务失败', JSON.stringify(data));
                                     return [3 /*break*/, 14];
                                 }
                                 _m.label = 13;
@@ -168,10 +200,7 @@ var message = '', pandaToken = process.env.PANDA_TOKEN ? process.env.PANDA_TOKEN
                             case 19:
                                 i++;
                                 return [3 /*break*/, 7];
-                            case 20:
-                                fs = require('fs');
-                                fs.writeFileSync('.env', 'PANDA_TOKEN=""\n');
-                                return [2 /*return*/];
+                            case 20: return [2 /*return*/];
                         }
                     });
                 };
@@ -206,26 +235,29 @@ var message = '', pandaToken = process.env.PANDA_TOKEN ? process.env.PANDA_TOKEN
     });
 }); })();
 function api(fn, body) {
-    var _a;
     return __awaiter(this, void 0, void 0, function () {
-        var sign;
+        var sign, _a;
         return __generator(this, function (_b) {
             switch (_b.label) {
-                case 0: return [4 /*yield*/, (0, TS_USER_AGENTS_1.post)('https://api.jds.codes/jd/sign', { fn: fn, body: body }, { 'Authorization': "Bearer ".concat(pandaToken[(0, TS_USER_AGENTS_1.getRandomNumberByRange)(0, pandaToken.length - 1)]) })];
+                case 0:
+                    if (!PANDA_TOKEN) return [3 /*break*/, 2];
+                    return [4 /*yield*/, getSign(fn, body)];
                 case 1:
-                    sign = _b.sent();
-                    if (!((_a = sign === null || sign === void 0 ? void 0 : sign.data) === null || _a === void 0 ? void 0 : _a.sign)) {
-                        (0, TS_USER_AGENTS_1.o2s)(sign, 'getSign Error');
-                        return [2 /*return*/, {}];
-                    }
-                    return [4 /*yield*/, (0, TS_USER_AGENTS_1.post)("https://api.m.jd.com/client.action?functionId=".concat(fn), sign.data.sign, {
+                    _a = _b.sent();
+                    return [3 /*break*/, 3];
+                case 2:
+                    _a = getSign(fn, body);
+                    _b.label = 3;
+                case 3:
+                    sign = _a;
+                    return [4 /*yield*/, (0, TS_USER_AGENTS_1.post)("https://api.m.jd.com/client.action?functionId=".concat(fn), sign, {
                             'Host': 'api.m.jd.com',
                             'Cookie': cookie,
                             'content-type': 'application/x-www-form-urlencoded',
                             'user-agent': TS_USER_AGENTS_1["default"],
                             'referer': ''
                         })];
-                case 2: return [2 /*return*/, _b.sent()];
+                case 4: return [2 /*return*/, _b.sent()];
             }
         });
     });
