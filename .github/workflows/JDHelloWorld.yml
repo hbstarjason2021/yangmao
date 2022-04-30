@@ -50,7 +50,7 @@ jobs:
         #########################tsc jd_wechat_sign.ts --downlevelIteration
         tsc jd_cash.ts --downlevelIteration
         #########################tsc jd_joy_park_run.ts --downlevelIteration
-        #tsc utils/V3.ts --downlevelIteration
+        tsc utils/V3.ts --downlevelIteration
         #########################tsc jd_carnivalcity_card.ts --downlevelIteration
         tsc jd_fruit_help.ts --downlevelIteration
         tsc jd_joy_park_run.ts --downlevelIteration
@@ -78,7 +78,7 @@ jobs:
         #########################cp ./jd_wechat_sign.js ../
         cp ./jd_cash.js ../
         #########################cp ./jd_joy_park_run.js ../
-        #cp ./utils/V3.js ../
+        cp ./utils/V3.js ../
         #########################cp ./jd_carnivalcity_card.js ../
         cp ./jd_fruit_help.js ../
         cp ./jd_joy_park_run.js ../
