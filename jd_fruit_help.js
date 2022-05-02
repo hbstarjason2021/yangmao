@@ -80,7 +80,6 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
     return to.concat(ar || Array.prototype.slice.call(from));
 };
 exports.__esModule = true;
-var axios_1 = require("axios");
 var date_fns_1 = require("date-fns");
 var h5st_1 = require("./utils/h5st");
 var TS_USER_AGENTS_1 = require("./TS_USER_AGENTS");
@@ -180,7 +179,7 @@ var message = '', log = { help: '', runTimes: '' }, h5stTool = new h5st_1.H5ST("
                 return [4 /*yield*/, api('initForFarm', { "mpin": "", "utm_campaign": "t_335139774", "utm_medium": "appshare", "shareCode": code, "utm_term": "Wxfriends", "utm_source": "iosapp", "imageUrl": "", "nickName": "", "version": 14, "channel": 2, "babelChannel": 0 })];
             case 21:
                 res = _j.sent();
-                return [4 /*yield*/, (0, TS_USER_AGENTS_1.wait)(3000)];
+                return [4 /*yield*/, (0, TS_USER_AGENTS_1.wait)(5000)];
             case 22:
                 _j.sent();
                 if (res.helpResult.code === '7') {
@@ -202,7 +201,7 @@ var message = '', log = { help: '', runTimes: '' }, h5stTool = new h5st_1.H5ST("
                     console.log('已满');
                 }
                 else if (res.helpResult.remainTimes === 0) {
-                    console.log('次数用完');
+                    console.log('上限');
                     return [3 /*break*/, 24];
                 }
                 _j.label = 23;
@@ -220,7 +219,7 @@ var message = '', log = { help: '', runTimes: '' }, h5stTool = new h5st_1.H5ST("
                 }
                 finally { if (e_3) throw e_3.error; }
                 return [7 /*endfinally*/];
-            case 27: return [4 /*yield*/, (0, TS_USER_AGENTS_1.wait)(1000)
+            case 27: return [4 /*yield*/, (0, TS_USER_AGENTS_1.wait)(10000)
                 // 助力奖励
             ];
             case 28:
@@ -229,7 +228,7 @@ var message = '', log = { help: '', runTimes: '' }, h5stTool = new h5st_1.H5ST("
             case 29:
                 // 助力奖励
                 res = _j.sent();
-                return [4 /*yield*/, (0, TS_USER_AGENTS_1.wait)(1000)];
+                return [4 /*yield*/, (0, TS_USER_AGENTS_1.wait)(3000)];
             case 30:
                 _j.sent();
                 (0, TS_USER_AGENTS_1.o2s)(res, 'farmAssistInit');
@@ -246,7 +245,7 @@ var message = '', log = { help: '', runTimes: '' }, h5stTool = new h5st_1.H5ST("
                 return [4 /*yield*/, api('receiveStageEnergy', { "version": 14, "channel": 1, "babelChannel": "120" })];
             case 33:
                 data = _j.sent();
-                return [4 /*yield*/, (0, TS_USER_AGENTS_1.wait)(1000)];
+                return [4 /*yield*/, (0, TS_USER_AGENTS_1.wait)(3000)];
             case 34:
                 _j.sent();
                 farmAssistInit_waterEnergy += t.waterEnergy;
@@ -275,7 +274,7 @@ var message = '', log = { help: '', runTimes: '' }, h5stTool = new h5st_1.H5ST("
                 console.log('助力已领取', farmAssistInit_waterEnergy);
                 message += "\u3010\u52A9\u529B\u5DF2\u9886\u53D6\u3011  ".concat(farmAssistInit_waterEnergy, "\n");
                 message += '\n\n';
-                return [4 /*yield*/, (0, TS_USER_AGENTS_1.wait)(5000)];
+                return [4 /*yield*/, (0, TS_USER_AGENTS_1.wait)(60000)];
             case 41:
                 _j.sent();
                 _j.label = 42;
@@ -307,7 +306,7 @@ var message = '', log = { help: '', runTimes: '' }, h5stTool = new h5st_1.H5ST("
 }); })();
 function api(fn, body) {
     return __awaiter(this, void 0, void 0, function () {
-        var h5st, data;
+        var h5st;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -318,19 +317,15 @@ function api(fn, body) {
                         'clientVersion': '10.2.4',
                         'functionId': fn
                     });
-                    return [4 /*yield*/, axios_1["default"].get("https://api.m.jd.com/client.action?functionId=".concat(fn, "&body=").concat(JSON.stringify(body), "&appid=wh5&client=apple&clientVersion=10.2.4&h5st=").concat(h5st), {
-                            headers: {
-                                "Host": "api.m.jd.com",
-                                "Origin": "https://carry.m.jd.com",
-                                "User-Agent": TS_USER_AGENTS_1["default"],
-                                "Accept-Language": "zh-CN,zh-Hans;q=0.9",
-                                "Referer": "https://carry.m.jd.com/",
-                                "Cookie": cookie
-                            }
+                    return [4 /*yield*/, (0, TS_USER_AGENTS_1.get)("https://api.m.jd.com/client.action?functionId=".concat(fn, "&body=").concat(JSON.stringify(body), "&appid=wh5&client=apple&clientVersion=10.2.4&h5st=").concat(h5st), {
+                            "Host": "api.m.jd.com",
+                            "Origin": "https://carry.m.jd.com",
+                            "User-Agent": TS_USER_AGENTS_1["default"],
+                            "Accept-Language": "zh-CN,zh-Hans;q=0.9",
+                            "Referer": "https://carry.m.jd.com/",
+                            "Cookie": cookie
                         })];
-                case 1:
-                    data = (_a.sent()).data;
-                    return [2 /*return*/, data];
+                case 1: return [2 /*return*/, _a.sent()];
             }
         });
     });
