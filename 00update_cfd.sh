@@ -25,16 +25,16 @@ EOF
 ### docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_cfd_new.js' |grep "cfd_share_code" | awk -F ":" '{print $2}'
 
 #jd1_cfd=$(docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node gua_wealth_island_help.js' |grep "助力码:" | awk -F ":" '{print $5}')
-jd1_cfd=$(docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_cfd_new.js' |grep "cfd_share_code" | awk -F ":" '{print $2}')
+jd1_cfd=$(docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_cfd_codeup.js' |grep "cfd_share_code" | awk -F ":" '{print $2}')
 echo ${jd1_cfd}
 
-jd2_cfd=$(docker exec jd2 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_cfd_new.js' |grep "cfd_share_code" | awk -F ":" '{print $2}')
+jd2_cfd=$(docker exec jd2 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_cfd_codeup.js' |grep "cfd_share_code" | awk -F ":" '{print $2}')
 echo ${jd2_cfd}
 
-jd3_cfd=$(docker exec jd3 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_cfd_new.js' |grep "cfd_share_code" | awk -F ":" '{print $2}')
+jd3_cfd=$(docker exec jd3 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_cfd_codeup.js' |grep "cfd_share_code" | awk -F ":" '{print $2}')
 echo ${jd3_cfd}
 
-jd4_cfd=$(docker exec jd4 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_cfd_new.js' |grep "cfd_share_code" | awk -F ":" '{print $2}')
+jd4_cfd=$(docker exec jd4 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_cfd_codeup.js' |grep "cfd_share_code" | awk -F ":" '{print $2}')
 echo ${jd4_cfd}
 
 sed -i "s/JD1_CFD/${jd1_cfd}/g" cfd.json
