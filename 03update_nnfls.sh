@@ -1,6 +1,6 @@
 #!/bin/bash
 
-###### wget https://gitee.com/starjason/yangmao/raw/main/00updatecode.sh  && bash 00updatecode.sh
+###### wget https://gitee.com/starjason/yangmao/raw/main/03update_nnfls.sh  && bash 03update_nnfls.sh
 
 ## cd -P "$( dirname "$0"  )" && pwd 
 
