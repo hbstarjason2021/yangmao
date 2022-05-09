@@ -91,7 +91,7 @@ var message = '', log = { help: '', runTimes: '' }, h5stTool = new h5st_1.H5ST("
     var e_4, _f, e_3, _g;
     return __generator(this, function (_h) {
         switch (_h.label) {
-            case 0: return [4 /*yield*/, (0, TS_USER_AGENTS_1.requireConfig)()];
+            case 0: return [4 /*yield*/, (0, TS_USER_AGENTS_1.getCookie)()];
             case 1:
                 cookiesArr = _h.sent();
                 _h.label = 2;
@@ -135,7 +135,7 @@ var message = '', log = { help: '', runTimes: '' }, h5stTool = new h5st_1.H5ST("
             case 9:
                 _h.trys.push([9, 11, , 13]);
                 today = (0, date_fns_1.getDate)(new Date());
-                return [4 /*yield*/, (0, TS_USER_AGENTS_1.get)("https://api.jdsharecode.xyz/api/runTimes0407?activityId=farm&sharecode=".concat(res.farmUserPro.shareCode, "&today=").concat(today))];
+                return [4 /*yield*/, (0, TS_USER_AGENTS_1.get)("https://api.jdsharecode.xyz/api/runTimes0509?activityId=farm&sharecode=".concat(res.farmUserPro.shareCode, "&today=").concat(today))];
             case 10:
                 res = _h.sent();
                 console.log(res);
