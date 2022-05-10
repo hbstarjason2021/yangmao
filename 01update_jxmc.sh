@@ -24,16 +24,16 @@ cat <<  EOF > jxmc
 ["JD1_JXMC","JD4_JXMC","JD2_JXMC","JD3_JXMC"]
 EOF
 
-jd3_jxmc=$(docker exec jd3 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_jxmc-new.js' |grep "jxmc_share_code" | awk -F ":" '{print $2}')
+jd3_jxmc=$(docker exec jd3 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_jxmc_codeup.js' |grep "jxmc_share_code" | awk -F ":" '{print $2}')
 echo ${jd3_jxmc}
 
-jd4_jxmc=$(docker exec jd4 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_jxmc-new.js' |grep "jxmc_share_code" | awk -F ":" '{print $2}')
+jd4_jxmc=$(docker exec jd4 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_jxmc_codeup.js' |grep "jxmc_share_code" | awk -F ":" '{print $2}')
 echo ${jd4_jxmc}
 
-jd1_jxmc=$(docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_jxmc-new.js' |grep "jxmc_share_code" | awk -F ":" '{print $2}')
+jd1_jxmc=$(docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_jxmc_codeup.js' |grep "jxmc_share_code" | awk -F ":" '{print $2}')
 echo ${jd1_jxmc}
 
-jd2_jxmc=$(docker exec jd2 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_jxmc-new.js' |grep "jxmc_share_code" | awk -F ":" '{print $2}')
+jd2_jxmc=$(docker exec jd2 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_jxmc_codeup.js' |grep "jxmc_share_code" | awk -F ":" '{print $2}')
 echo ${jd2_jxmc}
 
 sed -i "s/JD3_JXMC/${jd3_jxmc}/g" jxmc.json
