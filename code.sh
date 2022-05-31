@@ -1,3 +1,6 @@
+docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_get_share_code.js'
+
+docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /JDHelloWorld; ts-node jd_getShareCodes.ts'
 
 ######################################################
 种豆得豆: 4npkonnsy7xi23qpldd3r2j7uacjaa2lz2pdlji
