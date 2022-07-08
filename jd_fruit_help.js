@@ -87,7 +87,7 @@ var sendNotify_1 = require("./sendNotify");
 var cookie = '', res = '', UserName, h5stTool;
 var shareCodeSelf = [], log = { help: '', runTimes: '' }, message = '';
 !(function () { return __awaiter(void 0, void 0, void 0, function () {
-    var cookiesArr, _a, _b, _c, index, value, i, today, e_1, e_2, e_3_1, _d, _e, _f, index, value, shareCodePool, shareCode, shareCode_1, shareCode_1_1, code, e_4_1, e_5, e_6_1, _g, _h, _j, index, value, assistFriendList, farmAssistInit_waterEnergy, _k, _l, t, e_7_1, e_8, e_9_1, _m;
+    var cookiesArr, _a, _b, _c, index, value, i, today, e_1, e_2, e_3_1, full, _d, _e, _f, index, value, shareCodePool, shareCode, shareCode_1, shareCode_1_1, code, e_4_1, e_5, e_6_1, _g, _h, _j, index, value, assistFriendList, farmAssistInit_waterEnergy, _k, _l, t, e_7_1, e_8, e_9_1, _m;
     var e_3, _o, e_6, _p, e_4, _q, e_9, _r, e_7, _s;
     return __generator(this, function (_t) {
         switch (_t.label) {
@@ -171,6 +171,7 @@ var shareCodeSelf = [], log = { help: '', runTimes: '' }, message = '';
                 return [7 /*endfinally*/];
             case 21:
                 (0, TS_USER_AGENTS_1.o2s)(shareCodeSelf, '内部互助');
+                full = [];
                 _t.label = 22;
             case 22:
                 _t.trys.push([22, 50, 51, 52]);
@@ -201,6 +202,10 @@ var shareCodeSelf = [], log = { help: '', runTimes: '' }, message = '';
                 if (!!shareCode_1_1.done) return [3 /*break*/, 41];
                 code = shareCode_1_1.value;
                 console.log("\u8D26\u53F7".concat(index + 1, " ").concat(UserName, " \u53BB\u52A9\u529B ").concat(code, " ").concat(shareCodeSelf.includes(code) ? "*内部*" : ""));
+                if (full.includes(code)) {
+                    console.log('full contains');
+                    return [3 /*break*/, 40];
+                }
                 return [4 /*yield*/, api('initForFarm', { "mpin": "", "utm_campaign": "t_335139774", "utm_medium": "appshare", "shareCode": code, "utm_term": "Wxfriends", "utm_source": "iosapp", "imageUrl": "", "nickName": "", "version": 14, "channel": 2, "babelChannel": 0 })];
             case 29:
                 res = _t.sent();
@@ -227,6 +232,7 @@ var shareCodeSelf = [], log = { help: '', runTimes: '' }, message = '';
             case 34:
                 if (!(res.helpResult.code === '10')) return [3 /*break*/, 35];
                 console.log('已满');
+                full.push(code);
                 return [3 /*break*/, 37];
             case 35:
                 if (!(res.helpResult.remainTimes === 0)) return [3 /*break*/, 37];
