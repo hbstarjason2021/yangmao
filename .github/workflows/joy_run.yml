@@ -62,7 +62,7 @@ jobs:
          
          ## docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; yxyPhone="${{secrets.YXYPHONE}}";  node yxyapp.js'
          
-         docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_bean_change_ccwav.js'
+         #docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_bean_change_ccwav.js'
 
          docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts;  JD_JOY_PARK_RUN_ASSETS=0.01 ; node /scripts/jd_joy_park_run.js'
          docker exec jd4 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts;  JD_JOY_PARK_RUN_ASSETS=0.01 ; node /scripts/jd_joy_park_run.js'
