@@ -5,7 +5,7 @@ on:
   #  branches: [ main ]
   workflow_dispatch: # 手动触发
   schedule: # 计划任务触发
-    - cron: '19,59 0-23/1 * * *' # cron表达式，Actions时区是UTC时间，所以要往前推8个小时(4-23)
+    - cron: '11,51 0-23/1 * * *' # cron表达式，Actions时区是UTC时间，所以要往前推8个小时(4-23)
     
 jobs:
   joy_run:
