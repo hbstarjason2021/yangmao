@@ -58,7 +58,7 @@ jobs:
         tsc jd_joy_park_run.ts --downlevelIteration
         tsc utils/h5st.ts --downlevelIteration
         tsc utils/shareCodesTool.ts --downlevelIteration
-        tsc jd_getShareCodes.ts --downlevelIteration
+        #########################tsc jd_getShareCodes.ts --downlevelIteration
         
         
         #######################cp ./jx_nnfls.js ../
@@ -87,7 +87,7 @@ jobs:
         cp ./jd_joy_park_run.js ../
         cp ./utils/h5st.js ../
         cp ./utils/shareCodesTool.js ../
-        cp ./jd_getShareCodes.js ../
+        #########################cp ./jd_getShareCodes.js ../
         
 
         #cp -f ./JDHelloWorld/*_*.js ./
