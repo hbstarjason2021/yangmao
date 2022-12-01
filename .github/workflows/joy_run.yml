@@ -47,11 +47,11 @@ jobs:
          sed -i '2s/pt_key=/pt_key="${{secrets.KEY3}}"/' env/env3 
          sed -i '3s/pt_pin=/pt_pin=fu5520jing/' env/env3
          
-         #sed -i '2s/pt_key=/pt_key="${{secrets.KEY5}}"/' env/env5 
-         #sed -i '3s/pt_pin=/pt_pin=feng_qin07/' env/env5
+         sed -i '2s/pt_key=/pt_key="${{secrets.KEY5}}"/' env/env5 
+         sed -i '3s/pt_pin=/pt_pin=feng_qin07/' env/env5
 
-         #sed -i '2s/pt_key=/pt_key="${{secrets.KEY6}}"/' env/env6 
-         #sed -i '3s/pt_pin=/pt_pin=15046099446_p/' env/env6
+         sed -i '2s/pt_key=/pt_key="${{secrets.KEY6}}"/' env/env6 
+         sed -i '3s/pt_pin=/pt_pin=15046099446_p/' env/env6
          
          docker-compose up --no-build --force-recreate --detach jd1
          docker-compose up --no-build --force-recreate --detach jd4
