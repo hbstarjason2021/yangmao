@@ -1,0 +1,36 @@
+name: upyun
+
+on:
+  workflow_dispatch: 
+  #schedule:
+  #  - cron:  0 9,12,21 * * * 
+      # 
+      # https://tool.lu/crontab/
+      # https://datetime360.com/cn/utc-cst-china-time/
+  #watch:
+  #    types: started   
+
+jobs:
+  upyun:
+    runs-on: ubuntu-latest
+    #if: github.event.repository.owner.id == github.event.sender.id
+    # https://p3terx.com/archives/github-actions-manual-trigger.html
+    
+    steps:
+    #- uses: actions/checkout@v2
+    
+    - name: upyun
+      run: |
+         sudo timedatectl set-timezone 'Asia/Shanghai'
+         
+         ### git clone https://github.com/ClassmateLin/upyun
+         
+         wget https://github.com/ClassmateLin/upyun/releases/download/v0.1.0/upyun-v0.1.0-x86_64-unknown-linux-musl.tar.gz
+         tar zvxf upyun-v0.1.0-x86_64-unknown-linux-musl.tar.gz
+         ls -l 
+         cat config.toml
+         # sed   config.toml
+         
+         ./upyun
+         
+         
