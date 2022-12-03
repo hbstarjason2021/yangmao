@@ -25,6 +25,9 @@ jobs:
          echo ${current_time}
     - name: Run joy_run
       run: |
+      
+         timedatectl set-timezone 'Asia/Shanghai'
+        
          docker info
          docker-compose version
          git clone https://github.com/hbstarjason2021/jd-scripts-docker && cd jd-scripts-docker
