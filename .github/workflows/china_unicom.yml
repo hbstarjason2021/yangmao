@@ -1,0 +1,44 @@
+name: china_unicom
+
+on:
+  workflow_dispatch: 
+  #push:
+  #  branches: [ master ]
+  #pull_request:
+  #  branches: [ master ]
+  #schedule:
+  #  - cron:  0 10,16 * * * 
+      # 
+      # https://tool.lu/crontab/
+      # https://datetime360.com/cn/utc-cst-china-time/
+  #watch:
+  #    types: started   
+
+jobs:
+  china_unicom:
+    runs-on: ubuntu-latest
+    #if: github.event.repository.owner.id == github.event.sender.id
+    # https://p3terx.com/archives/github-actions-manual-trigger.html
+    
+    steps:
+    #- uses: actions/checkout@v2
+
+    - name: Install Python
+      run: |
+        sudo apt update && \
+        sudo apt install python3
+      
+    - name: requirements
+      run: |
+        #pip3 install -r requirements.txt
+        pip3 install pycryptodome
+       
+    - name: Task
+      run: |
+        git clone https://github.com/limoruirui/misaka && cd misaka
+        ls -l 
+        
+        #export PHONE_NUM=${{ secrets.PHONE_NUM }}
+        python3 china_unicom.py
+      env: 
+        PHONE_NUM: ${{ secrets.PHONE_NUM }}
