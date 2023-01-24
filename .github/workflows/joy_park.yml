@@ -61,8 +61,8 @@ jobs:
          docker-compose up --no-build --force-recreate --detach jd2
          docker-compose up --no-build --force-recreate --detach jd3
          
-         docker-compose up --no-build --force-recreate --detach jd5
-         docker-compose up --no-build --force-recreate --detach jd6
+         #docker-compose up --no-build --force-recreate --detach jd5
+         #docker-compose up --no-build --force-recreate --detach jd6
          
          docker images 
          docker ps 
