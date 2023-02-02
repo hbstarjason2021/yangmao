@@ -1,0 +1,39 @@
+name: Aria2-Web
+
+on:  
+  #push: # push触发
+  #  branches: [ main ]
+  workflow_dispatch: # 手动触发
+  #schedule: # 计划任务触发
+  #  - cron: '1,18 0-23/1 * * *' # cron表达式，Actions时区是UTC时间，所以要往前推8个小时(4-23)
+    
+jobs:
+  joy_run:
+    ##if: github.event.repository.owner.id == github.event.sender.id
+
+    runs-on: ubuntu-latest    
+    steps:   
+    # 检出
+    #- name: Checkout
+    #  uses: actions/checkout@v2
+      
+    # 设置服务器时区为东八区 
+    - name: Set time zone
+      run: |
+         sudo timedatectl set-timezone 'Asia/Shanghai'
+         current_time=$(date +"%Y-%m-%d-%k")
+         echo ${current_time}
+    - name: Run Aria2-Web
+      run: |
+        VER=$(curl -s -N https://api.github.com/repos/mayswind/AriaNg/releases | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/' | head -n 1)
+        curl -sSL https://github.com/mayswind/AriaNg/releases/download/${VER}/AriaNg-${VER}.zip -o /tmp/tmp.zip && unzip -n /tmp/tmp.zip -d ./AriaNg || echo "Download failed!"
+        
+    - name: Deploy to GitHub Pages   
+        uses: crazy-max/ghaction-github-pages@v2
+        with:
+          repo: Apocalypsor/Aria2-Web
+          target_branch: main
+          build_dir: ./AriaNg/
+          fqdn: starjason.eu.org
+        env:
+          GITHUB_TOKEN: ${{ secrets.PAT }}      
