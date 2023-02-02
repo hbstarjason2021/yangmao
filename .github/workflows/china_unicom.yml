@@ -21,12 +21,18 @@ jobs:
     # https://p3terx.com/archives/github-actions-manual-trigger.html
     
     steps:
-    #- uses: actions/checkout@v2
+    #- name: Checkout
+    #  uses: actions/checkout@v2
+    #- name: Set up Python
+    #  uses: actions/setup-python@v2
+    #  with:
+    #   python-version: 3.x
 
     - name: Install Python
       run: |
         sudo apt update && \
         sudo apt install python3
+        python3 --version
       
     - name: requirements
       run: |
