@@ -29,11 +29,11 @@ jobs:
         curl -sSL https://github.com/mayswind/AriaNg/releases/download/${VER}/AriaNg-${VER}.zip -o /tmp/tmp.zip && unzip -n /tmp/tmp.zip -d ./AriaNg || echo "Download failed!"
         
     - name: Deploy to GitHub Pages   
-        uses: crazy-max/ghaction-github-pages@v2
-        with:
+      uses: crazy-max/ghaction-github-pages@v2
+      with:
           repo: Apocalypsor/Aria2-Web
           target_branch: main
           build_dir: ./AriaNg/
           fqdn: starjason.eu.org
-        env:
+      env:
           GITHUB_TOKEN: ${{ secrets.PAT }}      
