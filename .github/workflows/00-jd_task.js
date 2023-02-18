@@ -1,4 +1,4 @@
-name: joy_task
+name: jd_task
 
 on:  
   #push: # push触发
@@ -8,7 +8,7 @@ on:
     - cron: '3 0-23/2 * * *' # cron表达式，Actions时区是UTC时间，所以要往前推8个小时(4-23)
     
 jobs:
-  joy_task:
+  jd_task:
     ##if: github.event.repository.owner.id == github.event.sender.id
 
     runs-on: ubuntu-latest    
@@ -23,7 +23,7 @@ jobs:
          sudo timedatectl set-timezone 'Asia/Shanghai'
          current_time=$(date +"%Y-%m-%d-%k")
          echo ${current_time}
-    - name: Run joy_task
+    - name: Run jd_task
       run: |
       
          timedatectl set-timezone 'Asia/Shanghai'
