@@ -23,7 +23,7 @@ jobs:
          sudo timedatectl set-timezone 'Asia/Shanghai'
          current_time=$(date +"%Y-%m-%d-%k")
          echo ${current_time}
-    - name: Run joy_run
+    - name: Run joy_task
       run: |
       
          timedatectl set-timezone 'Asia/Shanghai'
