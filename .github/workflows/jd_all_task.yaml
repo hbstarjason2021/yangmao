@@ -58,8 +58,8 @@ jobs:
          docker-compose up --no-build --force-recreate --detach jd2
          docker-compose up --no-build --force-recreate --detach jd3
          
-         docker-compose up --no-build --force-recreate --detach jd5
-         docker-compose up --no-build --force-recreate --detach jd6
+         #docker-compose up --no-build --force-recreate --detach jd5
+         #docker-compose up --no-build --force-recreate --detach jd6
          
          cp 01run.sh 02run.sh &&  sed -i "s/jd1/jd2/g"  02run.sh
          cp 01run.sh 03run.sh &&  sed -i "s/jd1/jd3/g"  03run.sh 
