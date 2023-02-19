@@ -76,7 +76,7 @@ jobs:
          
   jd_run_1:  
     runs-on: ubuntu-latest
-    needs: jd_all_task
+    #needs: jd_all_task
     steps:
     - name: Run jd_run_1
       run: |
@@ -89,5 +89,18 @@ jobs:
          
          docker images 
              
-
+  jd_run_2:  
+    runs-on: ubuntu-latest
+    #needs: jd_all_task
+    steps:
+    - name: Run jd_run_2
+      run: |
+         timedatectl set-timezone 'Asia/Shanghai'
+         
+         docker info
+         docker-compose version
+         git clone https://github.com/hbstarjason2021/jd-scripts-docker && cd jd-scripts-docker
+         docker pull hbstarjason/jd-scripts
+         
+         docker images
          
