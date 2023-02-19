@@ -23,7 +23,7 @@ jobs:
          echo ${current_time}
     - name: Run jd_all_task
       run: |
-         timedatectl set-timezone 'Asia/Shanghai'
+         #timedatectl set-timezone 'Asia/Shanghai'
          
          docker info
          docker-compose version
@@ -80,7 +80,10 @@ jobs:
     steps:
     - name: Run jd_run_1
       run: |
-         timedatectl set-timezone 'Asia/Shanghai'
+         sudo timedatectl set-timezone 'Asia/Shanghai'
+         current_time=$(date +"%Y-%m-%d-%k")
+         echo ${current_time}      
+         #timedatectl set-timezone 'Asia/Shanghai'
          
          docker info
          docker-compose version
@@ -95,7 +98,10 @@ jobs:
     steps:
     - name: Run jd_run_2
       run: |
-         timedatectl set-timezone 'Asia/Shanghai'
+         sudo timedatectl set-timezone 'Asia/Shanghai'
+         current_time=$(date +"%Y-%m-%d-%k")
+         echo ${current_time}
+         #timedatectl set-timezone 'Asia/Shanghai'
          
          docker info
          docker-compose version
