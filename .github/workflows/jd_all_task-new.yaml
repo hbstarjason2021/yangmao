@@ -79,7 +79,7 @@ jobs:
     needs: jd_all_task
     steps:
     - name: Run jd_run_1
-        run: |
+      run: |
          timedatectl set-timezone 'Asia/Shanghai'
          
          docker info
