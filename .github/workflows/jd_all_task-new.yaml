@@ -91,6 +91,15 @@ jobs:
          docker pull hbstarjason/jd-scripts
          
          docker images 
+         
+         sed -i '2s/pt_key=/pt_key="${{secrets.KEY1}}"/' env/env1 
+         sed -i '3s/pt_pin=/pt_pin=jd_709c349f13b51/' env/env1
+         
+         cp 01run.sh 02run.sh &&  sed -i "s/jd1/jd2/g"  02run.sh
+         cp 01run.sh 03run.sh &&  sed -i "s/jd1/jd3/g"  03run.sh 
+         cp 01run.sh 04run.sh &&  sed -i "s/jd1/jd4/g"  04run.sh
+         
+         sh 01run.sh
              
   jd_run_2:  
     runs-on: ubuntu-latest
@@ -111,6 +120,15 @@ jobs:
          docker pull hbstarjason/jd-scripts
          
          docker images
+         
+         sed -i '2s/pt_key=/pt_key="${{secrets.KEY2}}"/' env/env2 
+         sed -i '3s/pt_pin=/pt_pin=yuxiachenqi/' env/env2
+         
+         cp 01run.sh 02run.sh &&  sed -i "s/jd1/jd2/g"  02run.sh
+         cp 01run.sh 03run.sh &&  sed -i "s/jd1/jd3/g"  03run.sh 
+         cp 01run.sh 04run.sh &&  sed -i "s/jd1/jd4/g"  04run.sh
+         
+         sh 02run.sh       
  
   jd_run_3:  
     runs-on: ubuntu-latest
@@ -131,6 +149,15 @@ jobs:
          docker pull hbstarjason/jd-scripts
          
          docker images
+         
+         sed -i '2s/pt_key=/pt_key="${{secrets.KEY3}}"/' env/env3 
+         sed -i '3s/pt_pin=/pt_pin=fu5520jing/' env/env3
+         
+         cp 01run.sh 02run.sh &&  sed -i "s/jd1/jd2/g"  02run.sh
+         cp 01run.sh 03run.sh &&  sed -i "s/jd1/jd3/g"  03run.sh 
+         cp 01run.sh 04run.sh &&  sed -i "s/jd1/jd4/g"  04run.sh
+         
+         sh 03run.sh 
 
   jd_run_4:  
     runs-on: ubuntu-latest
@@ -151,3 +178,13 @@ jobs:
          docker pull hbstarjason/jd-scripts
          
          docker images
+         
+         sed -i '2s/pt_key=/pt_key="${{secrets.KEY4}}"/' env/env4 
+         sed -i '3s/pt_pin=/pt_pin=starjason/' env/env4
+         
+         cp 01run.sh 02run.sh &&  sed -i "s/jd1/jd2/g"  02run.sh
+         cp 01run.sh 03run.sh &&  sed -i "s/jd1/jd3/g"  03run.sh 
+         cp 01run.sh 04run.sh &&  sed -i "s/jd1/jd4/g"  04run.sh
+         
+         sh 04run.sh 
+         
