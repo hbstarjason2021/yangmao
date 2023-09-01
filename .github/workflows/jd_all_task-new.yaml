@@ -69,7 +69,21 @@ jobs:
          #sh 02run.sh
          #sh 03run.sh
          #sh 04run.sh
+
+         ########################
+         cp jdCookie.js jdCookie.js.bak 
+
+         sed -i 's/CK1/pt_key="${{secrets.KEY1}}"; pt_pin=jd_709c349f13b51;/'  jdCookie.js
+         sed -i 's/CK2/pt_key="${{secrets.KEY2}}"; pt_pin=yuxiachenqi;/'       jdCookie.js
+         sed -i 's/CK4/pt_key="${{secrets.KEY4}}"; pt_pin=starjason;/'         jdCookie.js
+         sed -i 's/CK3/pt_key="${{secrets.KEY3}}"; pt_pin=fu5520jing;/'        jdCookie.js
+
+         docker cp jdCookie.js  jd1:/scripts
+         docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_plantBean_help-6dy.js'
+         cp jdCookie.js.bak jdCookie.js
+         docker cp jdCookie.js  jd1:/scripts
          
+         ########################
          docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_bean_change_ccwav.js'
          docker exec jd2 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_bean_change_ccwav.js'
          docker exec jd4 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_bean_change_ccwav.js'
