@@ -89,6 +89,8 @@ jobs:
          docker exec jd4 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_bean_change_ccwav.js'
          docker exec jd3 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_bean_change_ccwav.js'
 
+         docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts;export FRUITCODES="ab20ce7ec4294af6af5f11ce657e6bcb&2764c0d2f0c44a32906c895b3cca8c66&0fda5c9ebd194434aaecbbdf0d8741af&670b6a89e4694fc3be6b79bc93a51c4e" ;node jd_farm_help.js'
+
          
   jd_run_1:  
     runs-on: ubuntu-latest
