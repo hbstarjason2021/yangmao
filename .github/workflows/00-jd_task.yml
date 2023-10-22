@@ -11,7 +11,8 @@ jobs:
   jd_task:
     ##if: github.event.repository.owner.id == github.event.sender.id
 
-    runs-on: ubuntu-latest    
+    #runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:   
     # 检出
     #- name: Checkout
