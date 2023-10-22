@@ -40,12 +40,12 @@ jobs:
          
          sed -i '2s/pt_key\=/pt_key\=${{secrets.KEY1}}/' env/env1 
          #sed -i '3s/pt_pin=/pt_pin="${{secrets.PIN1}}"/' env/env1
-         sed -i '3s/pt_pin=/pt_pin=jd_709c349f13b51/' env/env1
+         sed -i '3s/pt_pin\=/pt_pin\=jd_709c349f13b51/' env/env1
  
-         sed -i '2s/pt_key=/pt_key=${{secrets.KEY4}}/' env/env4 
-         sed -i '3s/pt_pin=/pt_pin=starjason/' env/env4
+         sed -i '2s/pt_key\=/pt_key\=${{secrets.KEY4}}/' env/env4 
+         sed -i '3s/pt_pin\=/pt_pin\=starjason/' env/env4
          
-         sed -i '2s/pt_key=/pt_key=${{secrets.KEY2}}/' env/env2 
+         sed -i '2s/pt_key\=/pt_key\=${{secrets.KEY2}}/' env/env2 
          sed -i '3s/pt_pin=/pt_pin=yuxiachenqi/' env/env2
          
          sed -i '2s/pt_key=/pt_key=${{secrets.KEY3}}/' env/env3 
