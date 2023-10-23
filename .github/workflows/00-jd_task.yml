@@ -42,9 +42,11 @@ jobs:
          #sed -i '3s/pt_pin=/pt_pin="${{secrets.PIN1}}"/' env/env1
          #sed -i '3s/pt_pin=/pt_pin=jd_709c349f13b51/g' env/env1
 
+         echo "***replace env1**"
          sed -i '2s/.*/pt_key="${{secrets.KEY1}}"/' env/env1 
          sed -i '3s/.*/pt_pin=jd_709c349f13b51/' env/env1
- 
+         cat env/env1
+         
          #sed -i '2s/pt_key=/pt_key="${{secrets.KEY4}}"/g' env/env4 
          #sed -i '3s/pt_pin=/pt_pin\=starjason/g' env/env4
          
