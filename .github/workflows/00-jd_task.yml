@@ -38,24 +38,24 @@ jobs:
          #docker tag registry.cn-beijing.aliyuncs.com/hbstarjason/jd-scripts@sha256:acf281ad4374d6cac315fa76f78c1d5bddc23980627b5c7ebf7e62745491c191 hbstarjason/jd-scripts
 
          
-         sed -i '2s/pt_key\=/pt_key\=${{secrets.KEY1}}/' env/env1 
+         sed -i '2s/pt_key=/pt_key="${{secrets.KEY1}}"/g' env/env1 
          #sed -i '3s/pt_pin=/pt_pin="${{secrets.PIN1}}"/' env/env1
-         sed -i '3s/pt_pin\=/pt_pin\=jd_709c349f13b51/' env/env1
+         sed -i '3s/pt_pin=/pt_pin=jd_709c349f13b51/g' env/env1
  
-         sed -i '2s/pt_key\=/pt_key\=${{secrets.KEY4}}/' env/env4 
-         sed -i '3s/pt_pin\=/pt_pin\=starjason/' env/env4
+         sed -i '2s/pt_key=/pt_key="${{secrets.KEY4}}"/g' env/env4 
+         sed -i '3s/pt_pin=/pt_pin\=starjason/g' env/env4
          
-         sed -i '2s/pt_key\=/pt_key\=${{secrets.KEY2}}/' env/env2 
-         sed -i '3s/pt_pin=/pt_pin=yuxiachenqi/' env/env2
+         sed -i '2s/pt_key=/pt_key\="${{secrets.KEY2}}"/g' env/env2 
+         sed -i '3s/pt_pin=/pt_pin=yuxiachenqi/g' env/env2
          
-         sed -i '2s/pt_key=/pt_key=${{secrets.KEY3}}/' env/env3 
-         sed -i '3s/pt_pin=/pt_pin=fu5520jing/' env/env3
+         sed -i '2s/pt_key=/pt_key="${{secrets.KEY3}}"/g' env/env3 
+         sed -i '3s/pt_pin=/pt_pin=fu5520jing/g' env/env3
          
-         #sed -i '2s/pt_key=/pt_key=${{secrets.KEY5}}/' env/env5 
-         #sed -i '3s/pt_pin=/pt_pin=feng_qin07/' env/env5
+         #sed -i '2s/pt_key=/pt_key="${{secrets.KEY5}}"/g' env/env5 
+         #sed -i '3s/pt_pin=/pt_pin=feng_qin07/g' env/env5
 
-         #sed -i '2s/pt_key=/pt_key=${{secrets.KEY6}}/' env/env6 
-         #sed -i '3s/pt_pin=/pt_pin=15046099446_p/' env/env6
+         #sed -i '2s/pt_key=/pt_key="${{secrets.KEY6}}"/g' env/env6 
+         #sed -i '3s/pt_pin=/pt_pin=15046099446_p/g' env/env6
          
          docker-compose up --no-build --force-recreate --detach jd1
          docker-compose up --no-build --force-recreate --detach jd4
