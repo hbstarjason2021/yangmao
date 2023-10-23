@@ -65,6 +65,8 @@ jobs:
 
          #sed -i '2s/pt_key=/pt_key="${{secrets.KEY6}}"/g' env/env6 
          #sed -i '3s/pt_pin=/pt_pin=15046099446_p/g' env/env6
+
+         echo "***run jd1 container**"
          
          docker-compose up --no-build --force-recreate --detach jd1
          docker-compose up --no-build --force-recreate --detach jd4
