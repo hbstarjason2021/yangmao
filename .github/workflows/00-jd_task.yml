@@ -43,9 +43,11 @@ jobs:
          
 
          echo "=== replace env1 ==="
-          
          
-         sed -i '2s/pt_key=/pt_key="${{secrets.KEY1}}"/g' env/env1 
+         ESCAPED_PASSWORD=$(echo "${{ secrets.KEY1_BASE64 }}" | base64 --decode | sed 's/"/\\"/g')
+         echo "$ESCAPED_PASSWORD" > env/env1  
+         
+         #sed -i '2s/pt_key=/pt_key="${{secrets.KEY1}}"/g' env/env1 
          #sed -i '3s/pt_pin=/pt_pin="${{secrets.PIN1}}"/' env/env1
          
          sed -i '3s/pt_pin=/pt_pin=jd_709c349f13b51/g' env/env1
