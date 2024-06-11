@@ -40,6 +40,9 @@ jobs:
          ls -l 
 
          echo "=== replace env1 ==="
+
+         ESCAPED_PASSWORD=$(echo '${{ secrets.KEY1_BASE64 }}' | base64 --decode | sed 's/"/\\"/g')
+         echo '$ESCAPED_PASSWORD' > env/env1 
          
 
          echo "==== run jd1 container ===="  
