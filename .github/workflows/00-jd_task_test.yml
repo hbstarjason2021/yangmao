@@ -45,10 +45,16 @@ jobs:
          ## echo '$ESCAPED_PASSWORD' > env/env1 
 
          echo '${{ secrets.ENV1 }}' > env/env1 
+         echo '${{ secrets.ENV1 }}' > env/env2
+         echo '${{ secrets.ENV1 }}' > env/env4
 
          echo "==== run jd1 container ===="  
          docker-compose up --no-build --force-recreate --detach jd1
+         docker-compose up --no-build --force-recreate --detach jd2
+         docker-compose up --no-build --force-recreate --detach jd4
 
          docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_bean_change_ccwav.js'
+         docker exec jd2 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_bean_change_ccwav.js'
+         docker exec jd4 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_bean_change_ccwav.js'
 
          
