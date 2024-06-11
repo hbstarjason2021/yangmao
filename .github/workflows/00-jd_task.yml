@@ -66,8 +66,9 @@ jobs:
          
          ## cat env/env1
 
-         export JD_COOKIE=$ENV1_BASE64
-
+         # export JD_COOKIE=$ENV1_BASE64
+         echo '$ENV1_BASE64' > env/env1 
+         
          
          #sed -i '2s/pt_key=/pt_key="${{secrets.KEY4}}"/g' env/env4 
          #sed -i '3s/pt_pin=/pt_pin\=starjason/g' env/env4
