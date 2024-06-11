@@ -1,0 +1,50 @@
+name: jd_task_test
+
+on:  
+  #push: # push触发
+  #  branches: [ main ]
+  workflow_dispatch: # 手动触发
+  #schedule: # 计划任务触发
+  #  - cron: '3 0-23/2 * * *' # cron表达式，Actions时区是UTC时间，所以要往前推8个小时(4-23)
+    
+jobs:
+  jd_task:
+    ##if: github.event.repository.owner.id == github.event.sender.id
+
+    #runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
+    steps:   
+    # 检出
+    #- name: Checkout
+    #  uses: actions/checkout@v2
+      
+    # 设置服务器时区为东八区 
+    - name: Set time zone
+      run: |
+         sudo timedatectl set-timezone 'Asia/Shanghai'
+         current_time=$(date +"%Y-%m-%d-%k")
+         echo ${current_time}
+    - name: Run jd_task
+      shell: bash
+      env: 
+         ENV1_BASE64: ${{ secrets.KEY1_BASE64 }}
+      run: |
+
+         timedatectl set-timezone 'Asia/Shanghai'
+        
+         docker info
+         docker-compose version
+         git clone https://github.com/hbstarjason2021/jd-scripts-docker && cd jd-scripts-docker
+         docker pull hbstarjason/jd-scripts
+
+         ls -l 
+
+         echo "=== replace env1 ==="
+         
+
+         echo "==== run jd1 container ===="  
+         docker-compose up --no-build --force-recreate --detach jd1
+
+         docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_bean_change_ccwav.js'
+
+         
