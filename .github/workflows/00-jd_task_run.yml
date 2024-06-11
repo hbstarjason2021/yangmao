@@ -1,4 +1,4 @@
-name: jd_task_test
+name: jd_task_run
 
 on:  
   #push: # push触发
@@ -48,7 +48,7 @@ jobs:
          echo '${{ secrets.ENV2 }}' > env/env2
          echo '${{ secrets.ENV4 }}' > env/env4
 
-         echo "==== run jd1 container ===="  
+         echo "==== run container ===="  
          docker-compose up --no-build --force-recreate --detach jd1
          docker-compose up --no-build --force-recreate --detach jd2
          docker-compose up --no-build --force-recreate --detach jd4
@@ -56,5 +56,13 @@ jobs:
          docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_bean_change_ccwav.js'
          docker exec jd2 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_bean_change_ccwav.js'
          docker exec jd4 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_bean_change_ccwav.js'
+
+         echo "==== run task ====" 
+
+         sh 01run.sh
+         sh 04run.sh
+         sh 02run.sh
+
+         
 
          
