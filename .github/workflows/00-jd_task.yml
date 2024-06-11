@@ -47,7 +47,7 @@ jobs:
          #sed -i '3s/.*/pt_pin=jd_709c349f13b51/' env/env1
 
          sed -i '2,3d'  env/env1
-         sed -i 's|JD_COOKIE="pt_key=$pt_key;pt_pin=$pt_pin;"|JD_COOKIE=pt_key=${{secrets.KEY1}};pt_pin=jd_709c349f13b51;|' env/env1
+         sed -i 's|JD_COOKIE=pt_key=$pt_key;pt_pin=$pt_pin;|JD_COOKIE=pt_key=${{secrets.KEY1}};pt_pin=jd_709c349f13b51;|' env/env1
          
          cat env/env1
          
