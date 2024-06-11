@@ -26,8 +26,10 @@ jobs:
          echo ${current_time}
     - name: Run jd_task
       shell: bash
+      env: 
+         ENV1_BASE64: ${{ secrets.KEY1_BASE64 }}
       run: |
-      
+
          timedatectl set-timezone 'Asia/Shanghai'
         
          docker info
@@ -48,8 +50,8 @@ jobs:
          # ESCAPED_PASSWORD=$(echo "${{ secrets.KEY1_BASE64 }}" | base64 --decode )
          # echo "$ESCAPED_PASSWORD" > env/env1  
 
-         perl -pi -e "s/pt_key=/pt_key="${{secrets.KEY1}}"/gi"  env/env1 
-         perl -pi -e "s/pt_pin=/pt_pin=jd_709c349f13b51/gi"  env/env1 
+         # perl -pi -e "s/pt_key=/pt_key="${{secrets.KEY1}}"/gi"  env/env1 
+         # perl -pi -e "s/pt_pin=/pt_pin=jd_709c349f13b51/gi"  env/env1 
          
          #sed -i '2s/pt_key=/pt_key="${{secrets.KEY1}}"/g' env/env1 
          #sed -i '3s/pt_pin=/pt_pin="${{secrets.PIN1}}"/' env/env1
@@ -64,6 +66,7 @@ jobs:
          
          ## cat env/env1
 
+         export JD_COOKIE=$ENV1_BASE64
 
          
          #sed -i '2s/pt_key=/pt_key="${{secrets.KEY4}}"/g' env/env4 
