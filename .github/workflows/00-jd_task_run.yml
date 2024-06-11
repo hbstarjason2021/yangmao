@@ -59,6 +59,9 @@ jobs:
 
          echo "==== run task ====" 
 
+         cp 01run.sh 02run.sh &&  sed -i "s/jd1/jd2/g"  02run.sh
+         cp 01run.sh 04run.sh &&  sed -i "s/jd1/jd4/g"  04run.sh
+
          sh 01run.sh
          sh 04run.sh
          sh 02run.sh
