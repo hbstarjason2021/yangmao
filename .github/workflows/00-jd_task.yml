@@ -38,8 +38,8 @@ jobs:
          #docker tag registry.cn-beijing.aliyuncs.com/hbstarjason/jd-scripts@sha256:acf281ad4374d6cac315fa76f78c1d5bddc23980627b5c7ebf7e62745491c191 hbstarjason/jd-scripts
 
          echo "=== cat env1 ==="
-         #cat env/env1
-         echo 'env/env1'
+         cat env/env1
+         
 
          echo "=== replace env1 ==="
           
