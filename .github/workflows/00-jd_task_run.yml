@@ -27,7 +27,7 @@ jobs:
     #     echo ${current_time}
          
     - name: Run jd_task
-      shell: bash
+      # shell: bash
       #env: 
       #   ENV1: ${{ secrets.ENV1 }}
       run: |
