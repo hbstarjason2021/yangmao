@@ -33,7 +33,7 @@ jobs:
       run: |
          echo "=== current_time ==="
          
-         timedatectl set-timezone 'Asia/Shanghai'
+         sudo timedatectl set-timezone 'Asia/Shanghai'
          current_time=$(date +"%Y-%m-%d-%k")
          echo ${current_time}
         
