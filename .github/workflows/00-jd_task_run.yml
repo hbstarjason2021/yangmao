@@ -11,6 +11,7 @@ jobs:
   jd_task:
     ##if: github.event.repository.owner.id == github.event.sender.id
 
+    # https://docs.github.com/zh/actions/using-github-hosted-runners/about-github-hosted-runners/about-github-hosted-runners#viewing-available-runners-for-a-repository
     #runs-on: ubuntu-latest
     runs-on: ubuntu-20.04
     steps:   
