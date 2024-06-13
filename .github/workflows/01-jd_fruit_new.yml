@@ -77,6 +77,14 @@ jobs:
          #sh 04run.sh
          #sh 02run.sh
 
+         ###### 种豆得豆
+         docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_plantBean-6dy.js'
+         docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_plantBean_help-6dy.js'
+
+         ###### 积分换话费
+         docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_dwapp-6dy.js'
+       
+
   jd1_fruit_new_task:
 
     # https://docs.github.com/zh/actions/using-github-hosted-runners/about-github-hosted-runners/about-github-hosted-runners#viewing-available-runners-for-a-repository
