@@ -1,4 +1,4 @@
-name: fruit_new
+name: jd_fruit_new_task
 
 on:  
   #push: # push触发
