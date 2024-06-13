@@ -1,4 +1,4 @@
-name: 00jd_task_run
+name: 00jd_task_run_all
 
 on:  
   #push: # push触发
