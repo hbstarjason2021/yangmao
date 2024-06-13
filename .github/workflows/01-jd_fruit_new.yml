@@ -73,9 +73,9 @@ jobs:
          #docker exec jd2 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_fruit-6dy.js'
 
 
-         sh 01run.sh
-         sh 04run.sh
-         sh 02run.sh
+         #sh 01run.sh
+         #sh 04run.sh
+         #sh 02run.sh
 
   jd1_fruit_new_task:
 
@@ -83,20 +83,8 @@ jobs:
     runs-on: ubuntu-latest
     needs: jd_info
     #runs-on: ubuntu-20.04
-    steps:   
-    # 检出
-    #- name: Checkout
-    #  uses: actions/checkout@v2
-      
-    # 设置服务器时区为东八区 
-    #- name: Set time zone
-    #  run: |
-    #     sudo timedatectl set-timezone 'Asia/Shanghai'
-    #     current_time=$(date +"%Y-%m-%d-%k")
-    #     echo ${current_time}
-         
+    steps:     
     - name: Run jd1_fruit_new_task
-
       run: |
          echo "=== current_time ==="
          
@@ -114,9 +102,6 @@ jobs:
 
          echo "=== replace env ==="
 
-         ## ESCAPED_PASSWORD=$(echo '${{ secrets.KEY1_BASE64 }}' | base64 --decode | sed 's/"/\\"/g')
-         ## echo '$ESCAPED_PASSWORD' > env/env1 
-
          echo '${{ secrets.ENV1 }}' > env/env1 
          echo '${{ secrets.ENV2 }}' > env/env2
          echo '${{ secrets.ENV4 }}' > env/env4
@@ -126,7 +111,6 @@ jobs:
          #docker-compose up --no-build --force-recreate --detach jd2
          #docker-compose up --no-build --force-recreate --detach jd4
 
-
          echo "==== run task ====" 
 
          cp 01run.sh 02run.sh &&  sed -i 's/jd1/jd2/g'  02run.sh
@@ -135,6 +119,87 @@ jobs:
          docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_fruit-6dy.js'
 
 
+  jd2_fruit_new_task:
+
+    # https://docs.github.com/zh/actions/using-github-hosted-runners/about-github-hosted-runners/about-github-hosted-runners#viewing-available-runners-for-a-repository
+    runs-on: ubuntu-latest
+    needs: jd_info
+    #runs-on: ubuntu-20.04
+    steps:     
+    - name: Run jd2_fruit_new_task
+      run: |
+         echo "=== current_time ==="
+         
+         sudo timedatectl set-timezone 'Asia/Shanghai'
+         current_time=$(date +"%Y-%m-%d-%k")
+         echo ${current_time}
+        
+         docker info
+         docker-compose version
+         
+         git clone https://github.com/hbstarjason2021/jd-scripts-docker && cd jd-scripts-docker
+         docker pull hbstarjason/jd-scripts
+
+         ls -l 
+
+         echo "=== replace env ==="
+
+         echo '${{ secrets.ENV1 }}' > env/env1 
+         echo '${{ secrets.ENV2 }}' > env/env2
+         echo '${{ secrets.ENV4 }}' > env/env4
+
+         echo "==== run container ===="  
+         #docker-compose up --no-build --force-recreate --detach jd1
+         docker-compose up --no-build --force-recreate --detach jd2
+         #docker-compose up --no-build --force-recreate --detach jd4
+
+         echo "==== run task ====" 
+
+         cp 01run.sh 02run.sh &&  sed -i 's/jd1/jd2/g'  02run.sh
+         cp 01run.sh 04run.sh &&  sed -i 's/jd1/jd4/g'  04run.sh
+
+         docker exec jd2 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_fruit-6dy.js'
+
+  jd4_fruit_new_task:
+
+    # https://docs.github.com/zh/actions/using-github-hosted-runners/about-github-hosted-runners/about-github-hosted-runners#viewing-available-runners-for-a-repository
+    runs-on: ubuntu-latest
+    needs: jd_info
+    #runs-on: ubuntu-20.04
+    steps:     
+    - name: Run jd4_fruit_new_task
+      run: |
+         echo "=== current_time ==="
+         
+         sudo timedatectl set-timezone 'Asia/Shanghai'
+         current_time=$(date +"%Y-%m-%d-%k")
+         echo ${current_time}
+        
+         docker info
+         docker-compose version
+         
+         git clone https://github.com/hbstarjason2021/jd-scripts-docker && cd jd-scripts-docker
+         docker pull hbstarjason/jd-scripts
+
+         ls -l 
+
+         echo "=== replace env ==="
+
+         echo '${{ secrets.ENV1 }}' > env/env1 
+         echo '${{ secrets.ENV2 }}' > env/env2
+         echo '${{ secrets.ENV4 }}' > env/env4
+
+         echo "==== run container ===="  
+         #docker-compose up --no-build --force-recreate --detach jd1
+         docker-compose up --no-build --force-recreate --detach jd2
+         #docker-compose up --no-build --force-recreate --detach jd4
+
+         echo "==== run task ====" 
+
+         cp 01run.sh 02run.sh &&  sed -i 's/jd1/jd2/g'  02run.sh
+         cp 01run.sh 04run.sh &&  sed -i 's/jd1/jd4/g'  04run.sh
+
+         docker exec jd4 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_fruit-6dy.js'
 
          
 
