@@ -199,8 +199,8 @@ jobs:
 
          echo "==== run container ===="  
          #docker-compose up --no-build --force-recreate --detach jd1
-         docker-compose up --no-build --force-recreate --detach jd2
-         #docker-compose up --no-build --force-recreate --detach jd4
+         #docker-compose up --no-build --force-recreate --detach jd2
+         docker-compose up --no-build --force-recreate --detach jd4
 
          echo "==== run task ====" 
 
