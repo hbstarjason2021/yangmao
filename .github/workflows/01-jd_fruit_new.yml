@@ -33,7 +33,9 @@ jobs:
       run: |
          echo "=== current_time ==="
 
-         curl -s "http://ip-api.com/line/?fields=countryCode"
+         countryCode=$(curl -s "http://ip-api.com/line/?fields=countryCode")
+         echo ${countryCode}
+         
          
          sudo timedatectl set-timezone 'Asia/Shanghai'
          current_time=$(date +"%Y-%m-%d-%k")
