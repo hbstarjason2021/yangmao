@@ -32,6 +32,8 @@ jobs:
       #   ENV1: ${{ secrets.ENV1 }}
       run: |
          echo "=== current_time ==="
+
+         curl -s "http://ip-api.com/line/?fields=countryCode"
          
          sudo timedatectl set-timezone 'Asia/Shanghai'
          current_time=$(date +"%Y-%m-%d-%k")
