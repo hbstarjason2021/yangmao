@@ -86,7 +86,7 @@ jobs:
          #sh 02run.sh
 
          ###### 联通
-         docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; chinaUnicomCookie=${UNICOM} ；node chinaUnicom.js'
+         docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; chinaUnicomCookie=${UNICOM}; node chinaUnicom.js'
          
 
          ###### 618开心夜task
