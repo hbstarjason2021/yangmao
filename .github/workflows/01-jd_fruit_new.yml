@@ -153,6 +153,7 @@ jobs:
          #docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_fruit_friend.js'
          #docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_fruit_hw.js'
 
+         docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_newfarmlottery.js'
          docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_fruit-6dy.js'
 
 
@@ -195,6 +196,7 @@ jobs:
          cp 01run.sh 02run.sh &&  sed -i 's/jd1/jd2/g'  02run.sh
          cp 01run.sh 04run.sh &&  sed -i 's/jd1/jd4/g'  04run.sh
 
+         docker exec jd2 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_newfarmlottery.js'
          docker exec jd2 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_fruit-6dy.js'
 
   jd4_fruit_new_task:
@@ -236,6 +238,7 @@ jobs:
          cp 01run.sh 02run.sh &&  sed -i 's/jd1/jd2/g'  02run.sh
          cp 01run.sh 04run.sh &&  sed -i 's/jd1/jd4/g'  04run.sh
 
+         docker exec jd4 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_newfarmlottery.js'
          docker exec jd4 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_fruit-6dy.js'
 
          
