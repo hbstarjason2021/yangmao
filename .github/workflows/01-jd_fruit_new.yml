@@ -94,7 +94,6 @@ jobs:
          docker exec jd2 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_618kxy_task.js'
          docker exec jd4 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_618kxy_task.js'
                   
-
          ###### 种豆得豆
          docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_plantBean-6dy.js'
          docker exec jd2 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_plantBean-6dy.js'
@@ -153,8 +152,12 @@ jobs:
          #docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_fruit_friend.js'
          #docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_fruit_hw.js'
 
+         cat << EOF >  task1.sh
          docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_newfarmlottery.js'
-         docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_fruit-6dy.js'
+         docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_fruit-6dy.js'        
+         EOF
+
+         sh  task1.sh
 
 
   jd2_fruit_new_task:
@@ -196,8 +199,14 @@ jobs:
          cp 01run.sh 02run.sh &&  sed -i 's/jd1/jd2/g'  02run.sh
          cp 01run.sh 04run.sh &&  sed -i 's/jd1/jd4/g'  04run.sh
 
+         cat << EOF >  task2.sh
          docker exec jd2 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_newfarmlottery.js'
-         docker exec jd2 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_fruit-6dy.js'
+         docker exec jd2 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_fruit-6dy.js'        
+         EOF
+
+         sh  task2.sh
+
+
 
   jd4_fruit_new_task:
 
@@ -238,8 +247,12 @@ jobs:
          cp 01run.sh 02run.sh &&  sed -i 's/jd1/jd2/g'  02run.sh
          cp 01run.sh 04run.sh &&  sed -i 's/jd1/jd4/g'  04run.sh
 
-         docker exec jd4 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_newfarmlottery.js'
-         docker exec jd4 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_fruit-6dy.js'
+         cat << EOF >  task4.sh
+         docker exec jd2 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_newfarmlottery.js'
+         docker exec jd2 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_fruit-6dy.js'        
+         EOF
+
+         sh  task4.sh
 
          
 
