@@ -218,7 +218,7 @@ jobs:
          cp 01run.sh 02run.sh &&  sed -i 's/jd1/jd2/g'  02run.sh
          cp 01run.sh 04run.sh &&  sed -i 's/jd1/jd4/g'  04run.sh
 
-         docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_fruit_new_passerby.js'
+         docker exec jd2 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_fruit_new_passerby.js'
          echo "==== END jd_fruit_new_passerby  ===="
          
          cat << EOF >  task2.sh
@@ -272,7 +272,7 @@ jobs:
          cp 01run.sh 02run.sh &&  sed -i 's/jd1/jd2/g'  02run.sh
          cp 01run.sh 04run.sh &&  sed -i 's/jd1/jd4/g'  04run.sh
          
-         docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_fruit_new_passerby.js'
+         docker exec jd4 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_fruit_new_passerby.js'
          echo "==== END jd_fruit_new_passerby  ===="
 
          cat << EOF >  task4.sh
