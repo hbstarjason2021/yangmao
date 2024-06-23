@@ -158,6 +158,7 @@ jobs:
 
          docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_fruit_new_passerby.js'
          
+         docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; NO_WATER=true; node jd_fruit-6dy-old.js'
 
          cat << EOF >  task1.sh
 
