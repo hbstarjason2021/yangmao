@@ -68,6 +68,11 @@ jobs:
 
          echo '${{ secrets.UNICOM }}' > env/unicom
 
+         pwd
+
+         ls -l env
+         
+
          echo "==== run container ===="  
          docker-compose up --no-build --force-recreate --detach jd1
          docker-compose up --no-build --force-recreate --detach jd2
