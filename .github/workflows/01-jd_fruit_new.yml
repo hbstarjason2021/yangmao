@@ -105,6 +105,8 @@ jobs:
          ###### 哈啰签到
          docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node hl.js'
 
+         docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; hlToken="${{ secrets.HALUO }}" ; node hl.js'
+
          ###### 联通
          docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node chinaUnicom.js'
 
