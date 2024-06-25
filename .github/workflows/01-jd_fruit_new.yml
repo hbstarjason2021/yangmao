@@ -68,6 +68,8 @@ jobs:
 
          echo '${{ secrets.UNICOM }}' > env/unicom
 
+         echo '${{ secrets.HALUO }}' > env/haluo
+
          pwd
 
          ls -l env
@@ -99,6 +101,9 @@ jobs:
          #sh 01run.sh
          #sh 04run.sh
          #sh 02run.sh
+
+         ###### 哈啰签到
+         docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node hl.js'
 
          ###### 联通
          docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node chinaUnicom.js'
