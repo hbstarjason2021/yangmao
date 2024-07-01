@@ -58,6 +58,8 @@ jobs:
 
          ls -l 
 
+         docker images 
+
          echo "=== replace env ==="
 
          ## ESCAPED_PASSWORD=$(echo '${{ secrets.KEY1_BASE64 }}' | base64 --decode | sed 's/"/\\"/g')
@@ -109,8 +111,11 @@ jobs:
          docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; hlToken="${{ secrets.HALUO }}" ; node hl.js'
 
          ###### 联通
-         docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node chinaUnicom.js'
+         #docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node chinaUnicom.js'
 
+         ###### jd_vxFans.js
+         docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_vxFans.js'
+         
          ###### 刮一刮
          #docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_gghb_draw.js'
          #docker exec jd2 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_gghb_draw.js'
