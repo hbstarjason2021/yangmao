@@ -201,8 +201,8 @@ jobs:
          
          cat << EOF >  task1.sh
          
-         #docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; DO_TEN_WATER_AGAIN=true; node jd_video_task.js'
-         #docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; DO_TEN_WATER_AGAIN=true; node jd_video_view.js'
+         docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; DO_TEN_WATER_AGAIN=true; node jd_video_task.js'
+         docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; DO_TEN_WATER_AGAIN=true; node jd_video_view.js'
          
 
          #docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; DO_TEN_WATER_AGAIN=true; node jd_fruit-6dy-old.js'
@@ -257,8 +257,8 @@ jobs:
          
          cat << EOF >  task2.sh
 
-         #docker exec jd2 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; DO_TEN_WATER_AGAIN=true; node jd_video_task.js'
-         #docker exec jd2 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; DO_TEN_WATER_AGAIN=true; node jd_video_view.js'
+         docker exec jd2 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; DO_TEN_WATER_AGAIN=true; node jd_video_task.js'
+         docker exec jd2 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; DO_TEN_WATER_AGAIN=true; node jd_video_view.js'
 
          #docker exec jd2 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; DO_TEN_WATER_AGAIN=true; node jd_fruit-6dy-old.js'         
          #docker exec jd2 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_newfarmlottery.js'
@@ -313,8 +313,8 @@ jobs:
 
          cat << EOF >  task4.sh
 
-         #docker exec jd4 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; DO_TEN_WATER_AGAIN=true; node jd_video_task.js'
-         #docker exec jd4 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; DO_TEN_WATER_AGAIN=true; node jd_video_view.js'
+         docker exec jd4 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; DO_TEN_WATER_AGAIN=true; node jd_video_task.js'
+         docker exec jd4 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; DO_TEN_WATER_AGAIN=true; node jd_video_view.js'
 
          #docker exec jd4 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; DO_TEN_WATER_AGAIN=true; node jd_fruit-6dy-old.js'                  
          #docker exec jd4 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_newfarmlottery.js'
