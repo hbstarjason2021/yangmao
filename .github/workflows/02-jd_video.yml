@@ -156,7 +156,7 @@ jobs:
     needs: jd_info
     #runs-on: ubuntu-20.04
     steps:     
-    - name: Run jd1_fruit_new_task
+    - name: Run jd1_video
       run: |
          echo "=== current_time ==="
          
@@ -220,7 +220,7 @@ jobs:
     needs: jd_info
     #runs-on: ubuntu-20.04
     steps:     
-    - name: Run jd2_fruit_new_task
+    - name: Run jd2_video
       run: |
          echo "=== current_time ==="
          
@@ -276,7 +276,7 @@ jobs:
     needs: jd_info
     #runs-on: ubuntu-20.04
     steps:     
-    - name: Run jd4_fruit_new_task
+    - name: Run jd4_video
       run: |
          echo "=== current_time ==="
          
