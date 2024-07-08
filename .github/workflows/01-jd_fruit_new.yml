@@ -214,7 +214,7 @@ jobs:
 
     # https://docs.github.com/zh/actions/using-github-hosted-runners/about-github-hosted-runners/about-github-hosted-runners#viewing-available-runners-for-a-repository
     runs-on: ubuntu-latest
-    needs: jd_info
+    #needs: jd_info
     #runs-on: ubuntu-20.04
     steps:     
     - name: Run jd2_fruit_new_task
