@@ -120,7 +120,7 @@ jobs:
          ##docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_video_view.js'
 
          ##### jd_jr_fish_help.js
-         docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_jr_fish_help.js'
+         ##docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_jr_fish_help.js'
 
          
          ###### 刮一刮
