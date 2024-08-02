@@ -86,9 +86,9 @@ jobs:
          
 
          echo "==== run container ===="  
-         docker-compose up --no-build --force-recreate --detach jd1
-         docker-compose up --no-build --force-recreate --detach jd2
-         docker-compose up --no-build --force-recreate --detach jd4
+         docker compose up --no-build --force-recreate --detach jd1
+         docker compose up --no-build --force-recreate --detach jd2
+         docker compose up --no-build --force-recreate --detach jd4
 
          docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_bean_change_ccwav.js'
          docker exec jd2 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_bean_change_ccwav.js'
@@ -172,7 +172,7 @@ jobs:
          echo ${current_time}
         
          docker info
-         docker-compose version
+         docker compose version
          
          git clone https://github.com/hbstarjason2021/jd-scripts-docker && cd jd-scripts-docker
          docker pull hbstarjason/jd-scripts
@@ -186,7 +186,7 @@ jobs:
          echo '${{ secrets.ENV4 }}' > env/env4
 
          echo "==== run container ===="  
-         docker-compose up --no-build --force-recreate --detach jd1
+         docker compose up --no-build --force-recreate --detach jd1
          #docker-compose up --no-build --force-recreate --detach jd2
          #docker-compose up --no-build --force-recreate --detach jd4
 
@@ -236,7 +236,7 @@ jobs:
          echo ${current_time}
         
          docker info
-         docker-compose version
+         docker compose version
          
          git clone https://github.com/hbstarjason2021/jd-scripts-docker && cd jd-scripts-docker
          docker pull hbstarjason/jd-scripts
@@ -251,7 +251,7 @@ jobs:
 
          echo "==== run container ===="  
          #docker-compose up --no-build --force-recreate --detach jd1
-         docker-compose up --no-build --force-recreate --detach jd2
+         docker compose up --no-build --force-recreate --detach jd2
          #docker-compose up --no-build --force-recreate --detach jd4
 
          echo "==== run task ====" 
@@ -292,7 +292,7 @@ jobs:
          echo ${current_time}
         
          docker info
-         docker-compose version
+         docker compose version
          
          git clone https://github.com/hbstarjason2021/jd-scripts-docker && cd jd-scripts-docker
          docker pull hbstarjason/jd-scripts
@@ -308,7 +308,7 @@ jobs:
          echo "==== run container ===="  
          #docker-compose up --no-build --force-recreate --detach jd1
          #docker-compose up --no-build --force-recreate --detach jd2
-         docker-compose up --no-build --force-recreate --detach jd4
+         docker compose up --no-build --force-recreate --detach jd4
 
          echo "==== run task ====" 
 
