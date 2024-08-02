@@ -39,7 +39,8 @@ jobs:
          echo ${current_time}
         
          docker info
-         docker-compose version
+         docker compose version
+         # docker-compose version
          
          git clone https://github.com/hbstarjason2021/jd-scripts-docker && cd jd-scripts-docker
          docker pull hbstarjason/jd-scripts
