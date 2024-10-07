@@ -156,7 +156,7 @@ jobs:
          #docker exec jd4 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_dwapp-6dy.js'
        
 
-  jd1_video:
+  jd1_debug:
 
     # https://docs.github.com/zh/actions/using-github-hosted-runners/about-github-hosted-runners/about-github-hosted-runners#viewing-available-runners-for-a-repository
     runs-on: ubuntu-latest
