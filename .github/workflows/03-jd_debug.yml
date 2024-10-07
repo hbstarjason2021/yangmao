@@ -122,14 +122,8 @@ jobs:
          ###### jd_vxFans.js
          #docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_vxFans.js'
 
-         ##### jd_video_view.js
-         #docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_video_view.js'
+         # docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_vxFans.js'
 
-         
-         ###### 刮一刮
-         #docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_gghb_draw.js'
-         #docker exec jd2 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_gghb_draw.js'
-         #docker exec jd4 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_gghb_draw.js' 
 
          ###### 转盘抽豆
          #docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_pan_lottery.js'
@@ -218,6 +212,10 @@ jobs:
          EOF
 
          ######################## sh  task1.sh
+
+         sh 01run.sh
+
+         
 
 
   jd2_debug:
