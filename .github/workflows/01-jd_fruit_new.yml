@@ -83,6 +83,8 @@ jobs:
          docker compose up --no-build --force-recreate --detach jd2
          docker compose up --no-build --force-recreate --detach jd4
 
+         
+
          docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_bean_change_ccwav.js'
          docker exec jd2 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_bean_change_ccwav.js'
          docker exec jd4 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_bean_change_ccwav.js'
@@ -91,10 +93,12 @@ jobs:
          #docker exec jd2 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; python3  jd_beans_7days.py'
          #docker exec jd4 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; python3  jd_beans_7days.py'
          
-         echo "==== run task ====" 
 
          cp 01run.sh 02run.sh &&  sed -i 's/jd1/jd2/g'  02run.sh
          cp 01run.sh 04run.sh &&  sed -i 's/jd1/jd4/g'  04run.sh
+
+         echo "==== run task ====" 
+         cat << EOF >  task.sh
 
          #docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_fruit-6dy.js'
          #docker exec jd4 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_fruit-6dy.js'
@@ -112,8 +116,6 @@ jobs:
 
          ###### 联通
          #docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node chinaUnicom.js'
-
-
 
          ###### jd_djggl_draw.js
          docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_djggl_draw.js'
@@ -164,7 +166,9 @@ jobs:
          docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_dwapp-6dy.js'
          docker exec jd2 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_dwapp-6dy.js'
          docker exec jd4 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_dwapp-6dy.js'
-       
+         EOF
+         
+         sh  task.sh
 
   jd1_fruit_new_task:
 
