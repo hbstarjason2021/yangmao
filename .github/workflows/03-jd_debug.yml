@@ -202,18 +202,22 @@ jobs:
          
          cat << EOF >  task1.sh
          
-         docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; DO_TEN_WATER_AGAIN=true; node jd_video_task.js'
-         docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; DO_TEN_WATER_AGAIN=true; node jd_video_view.js'
+         ## docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; DO_TEN_WATER_AGAIN=true; node jd_video_task.js'
+         ## docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; DO_TEN_WATER_AGAIN=true; node jd_video_view.js'
          
 
          #docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; DO_TEN_WATER_AGAIN=true; node jd_fruit-6dy-old.js'
          #docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_newfarmlottery.js'
-         #docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_fruit-6dy.js'        
+         #docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_fruit-6dy.js
+
+         ## jd_jrsign.js
+         docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; DO_TEN_WATER_AGAIN=true; node jd_jrsign.js'
+         
          EOF
 
          ######################## sh  task1.sh
 
-         sh 01run.sh
+         ### sh 01run.sh
 
          
 
