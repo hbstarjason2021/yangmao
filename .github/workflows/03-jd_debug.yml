@@ -151,6 +151,10 @@ jobs:
 
          docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; DO_TEN_WATER_AGAIN=true; node jd_farmshare.js'
 
+         ## jd_sharecode.sh
+         docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; sh jd_sharecode.sh'
+
+
        
 
   jd1_debug:
