@@ -149,9 +149,11 @@ jobs:
          #docker exec jd2 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_dwapp-6dy.js'
          #docker exec jd4 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_dwapp-6dy.js'
 
-         docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; DO_TEN_WATER_AGAIN=true; node jd_farmshare.js'
+         #docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; DO_TEN_WATER_AGAIN=true; node jd_farmshare.js'
+         docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; NEWFRUITSHARECODES=2764c0d2f0c44a32906c895b3cca8c66; node jd_farmshare.js'
 
-         ## jd_sharecode.sh
+
+         ## jd_sharecode.sh 
          docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; sh jd_sharecode.sh'
 
 
