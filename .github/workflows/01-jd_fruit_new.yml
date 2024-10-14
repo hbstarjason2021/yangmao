@@ -226,7 +226,9 @@ jobs:
 
          docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; DO_TEN_WATER_AGAIN=true; node jd_fruit-6dy-old.js'
          docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_newfarmlottery.js'
-         docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_fruit-6dy.js'        
+         docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_fruit-6dy.js'
+
+         docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; NEWFRUITSHARECODES=ycXdObektVWZW04HJIjwQgQj0P4; node jd_farmshare.js'
          EOF
 
          sh  task1.sh
@@ -280,7 +282,9 @@ jobs:
          
          docker exec jd2 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; DO_TEN_WATER_AGAIN=true; node jd_fruit-6dy-old.js'         
          docker exec jd2 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_newfarmlottery.js'
-         docker exec jd2 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_fruit-6dy.js'        
+         docker exec jd2 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_fruit-6dy.js'
+
+         docker exec jd2 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; NEWFRUITSHARECODES=ycXdOaS1kgvIAUVRfsD_LGkCNyqiOWs2-w; node jd_farmshare.js'
          EOF
 
          sh  task2.sh
@@ -335,7 +339,9 @@ jobs:
 
          docker exec jd4 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; DO_TEN_WATER_AGAIN=true; node jd_fruit-6dy-old.js'                  
          docker exec jd4 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_newfarmlottery.js'
-         docker exec jd4 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_fruit-6dy.js'        
+         docker exec jd4 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_fruit-6dy.js'
+
+         docker exec jd4 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; NEWFRUITSHARECODES=ycXdObektVWZW04HJIjwQgQj0P4; node jd_farmshare.js'
          EOF
 
          sh  task4.sh
