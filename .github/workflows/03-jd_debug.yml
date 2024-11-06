@@ -163,7 +163,9 @@ jobs:
 
          ##  jd_yb_draw.js
          docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; sh jd_yb_draw.js'
-      
+
+         docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; sh dingdong.js'
+
 
 
 
