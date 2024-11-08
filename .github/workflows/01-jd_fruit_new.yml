@@ -400,7 +400,7 @@ jd3_fruit_new_task:
          docker exec jd3 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_newfarmlottery.js'
          docker exec jd3 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; node jd_fruit-6dy.js'
 
-         docker exec jd3 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; NEWFRUITSHARECODES=ycXdObektVWZW04HJIjwQgQj0P4; node jd_farmshare.js'
+         docker exec jd3 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; NEWFRUITSHARECODES=0fda5c9ebd194434aaecbbdf0d8741af; node jd_farmshare.js'
          EOF
 
          sh  task3.sh
