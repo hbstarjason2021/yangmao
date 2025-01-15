@@ -167,7 +167,11 @@ jobs:
          ## docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; sh dingdong.js'
 
          ## jd_taskbean.js
-         docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; sh jd_taskbean.js'
+         #docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; sh jd_taskbean.js'
+
+         ## jd_proxy_check.js
+         docker exec jd1 bash -c 'set -o allexport; source /all; source /env; source /jd-scripts-docker/resolve.sh; cd /scripts; sh jd_proxy_check.js'
+
 
          
 
