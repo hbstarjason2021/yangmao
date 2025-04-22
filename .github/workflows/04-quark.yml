@@ -41,7 +41,7 @@ jobs:
        
     - name: Task
       run: |
-        git clone https://github.com/hbstarjason2021/yangmao && cd yangmao
+        git clone https://github.com/hbstarjason2021/yangmao && cd yangmao/quark/
         ls -l 
         
         #export COOKIE_QUARK=${{ secrets.COOKIE_QUARK }}
