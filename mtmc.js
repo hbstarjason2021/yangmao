@@ -15,7 +15,7 @@ function get(task, method = "get", data = null) {
             https://mall.meituan.com/api/c/mallcoin/
           ${task}&app_tag=union&bizId=2&ci=2&page_type=h5&poi=10000380&poiId=66&tenantId=1&t=${MTMC_token}&uci=-1&userid=${MTMC_userId}&utm_medium=android&utm_term=5.38.0&uuid=${MTMC_uuid}&xuuid=`
             const headers = {t: MTMC_token,
-        "User-Agent": $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT : (require('./USER_AGENTS').USER_AGENT)) : ($.getdata('JDUA') ? $.getdata('JDUA') : "jdapp;iPhone;9.4.4;14.3;network/4g;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1"),
+        "User-Agent": “XiaoXiangSuperMarket/3.1.0 (iPhone; iOS 15.4; Scale/3.00)”,
 
                 Host: "mall.meituan.com",
                 "X-Requested-With": "com.meituan.retail.v.android",
