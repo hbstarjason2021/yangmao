@@ -15,7 +15,7 @@ function get(task, method = "get", data = null) {
             https://mall.meituan.com/api/c/mallcoin/
           ${task}&app_tag=union&bizId=2&ci=2&page_type=h5&poi=10000380&poiId=66&tenantId=1&t=${MTMC_token}&uci=-1&userid=${MTMC_userId}&utm_medium=android&utm_term=5.38.0&uuid=${MTMC_uuid}&xuuid=`
             const headers = {t: MTMC_token,
-        "User-Agent": “XiaoXiangSuperMarket/3.1.0 (iPhone; iOS 15.4; Scale/3.00)”,
+        "User-Agent": “User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 16_6_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 TitansX/20.27.2 KNB/1.0 iOS/16.6.1 imaicai/com.baobaoaichi.imaicai/6.64.0 imaicai/6.64.0 App/11g10/6.64.0 iPhone/iPhone13 WKWebView”,
 
                 Host: "mall.meituan.com",
                 "X-Requested-With": "com.meituan.retail.v.android",
