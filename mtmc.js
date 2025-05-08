@@ -14,21 +14,11 @@ function get(task, method = "get", data = null) {
             let url = `
             https://mall.meituan.com/api/c/mallcoin/
           ${task}&app_tag=union&bizId=2&ci=2&page_type=h5&poi=10000380&poiId=66&tenantId=1&t=${MTMC_token}&uci=-1&userid=${MTMC_userId}&utm_medium=android&utm_term=5.38.0&uuid=${MTMC_uuid}&xuuid=`
-            const headers = {
-                t: MTMC_token,
-                "user-agent": "Mozilla/5.0 (Linux; Android 11; MEIZU 18 Pro Build/
-            RKQ1.201105.002;
-           wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/104.0.5112.69 Mobile Safari/537.36 TitansX/20.12.6 KNB/1.2.0 android/11 
-            com.meituan.retail.v.android/armv7
-           App/11g20/5.38.0 
-            com.meituan.retail.v.android/5.38.0"
-          ,
-                Host: "
-            mall.meituan.com"
-          ,
-                "X-Requested-With": "
-            com.meituan.retail.v.android"
-          ,
+            const headers = {t: MTMC_token,
+        "User-Agent": $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT : (require('./USER_AGENTS').USER_AGENT)) : ($.getdata('JDUA') ? $.getdata('JDUA') : "jdapp;iPhone;9.4.4;14.3;network/4g;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1"),
+
+                Host: "mall.meituan.com",
+                "X-Requested-With": "com.meituan.retail.v.android",
                 "Content-Type": "application/json; charset=utf-8"
             }
 
