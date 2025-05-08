@@ -1,3 +1,11 @@
+const axios = require("axios");
+const {
+    MTMC_userId,
+    MTMC_fingerprint,
+    MTMC_token,
+    MTMC_uuid
+} = config.MeiTuan;
+
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 async function get(task, method = "get", data = null) {
