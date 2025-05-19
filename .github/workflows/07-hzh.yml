@@ -21,38 +21,38 @@ jobs:
     # https://p3terx.com/archives/github-actions-manual-trigger.html
     
     steps:
-    #- name: Checkout
-    #  uses: actions/checkout@v4
-    #- name: Set up Nodejs
-    #  uses: actions/setup-node@v4
-    #  with:
-    #   pnode-version: '22.x'
-    #- run: |
-    #   node hzh.js
-    #  env:
-    #     hzh_url: ${{ secrets.HZH }}
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Set up Nodejs
+      uses: actions/setup-node@v4
+      with:
+       pnode-version: '22.x'
+    - run: |
+       node hzh.js
+      env:
+         hzh_url: ${{ secrets.HZH }}
       
-    - name: Install node
-      run: |
-        #curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
-        #source ~/.bashrc
+    #- name: Install node
+    #  run: |
+    #    #curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+    #    #source ~/.bashrc
         #nvm install --lts
         #nvm use --lts
-        sudo apt update && \
-        sudo apt install node
-        node --version
+    #    sudo apt update && \
+    #    sudo apt install nodejs
+    #    nodejs --version
       
     #- name: requirements
     #  run: |
     #    #pip3 install -r requirements.txt
     #    pip3 install pycryptodome
        
-    - name: Task
-      run: |
-       git clone https://github.com/hbstarjason2021/yangmao && cd yangmao/
-       ls -l 
+    #- name: Task
+    #  run: |
+    #   git clone https://github.com/hbstarjason2021/yangmao && cd yangmao/
+    #   ls -l 
         
-       node hzh.js
+    #   nodejs hzh.js
 
-      env: 
-        hzh_url: ${{ secrets.HZH }}
+    #  env: 
+    #    hzh_url: ${{ secrets.HZH }}
