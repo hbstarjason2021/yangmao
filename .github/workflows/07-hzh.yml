@@ -35,10 +35,10 @@ jobs:
     - name: Install node
       run: |
         curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
-        #source ~/.bashrc
+        source ~/.bashrc
         nvm install --lts
         nvm use --lts
-        nvm install node
+        nvm install 22
         
         #sudo apt update && \
         #sudo apt install nodejs
