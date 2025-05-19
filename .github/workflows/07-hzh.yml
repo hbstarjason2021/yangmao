@@ -21,22 +21,22 @@ jobs:
     # https://p3terx.com/archives/github-actions-manual-trigger.html
     
     steps:
-    #- name: Checkout
-    #  uses: actions/checkout@v2
-    #- name: Set up Python
-    #  uses: actions/setup-python@v2
-    #  with:
-    #   python-version: 3.x
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Set up Nodejs
+      uses: actions/setup-node@v4
+      with:
+       pnode-version: '22.x'
 
-    - name: Install node
-      run: |
-        #curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+    #- name: Install node
+    #  run: |
+    #    #curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
         #source ~/.bashrc
         #nvm install --lts
         #nvm use --lts
-        sudo apt update && \
-        sudo apt install node
-        node --version
+    #    sudo apt update && \
+    #    sudo apt install node
+    #    node --version
       
     #- name: requirements
     #  run: |
