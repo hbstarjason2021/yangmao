@@ -1,0 +1,51 @@
+name: 07hzh
+
+on:
+  workflow_dispatch: 
+  #push:
+  #  branches: [ master ]
+  #pull_request:
+  #  branches: [ master ]
+  schedule:
+    - cron:  44 1,14 * * *
+      # 
+      # https://tool.lu/crontab/
+      # https://datetime360.com/cn/utc-cst-china-time/
+  #watch:
+  #    types: started   
+
+jobs:
+  hzh:
+    runs-on: ubuntu-latest
+    #if: github.event.repository.owner.id == github.event.sender.id
+    # https://p3terx.com/archives/github-actions-manual-trigger.html
+    
+    steps:
+    #- name: Checkout
+    #  uses: actions/checkout@v2
+    #- name: Set up Python
+    #  uses: actions/setup-python@v2
+    #  with:
+    #   python-version: 3.x
+
+    - name: Install node
+      run: |
+        curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+        source ~/.bashrc
+        nvm install --lts
+        nvm use --lts
+      
+    #- name: requirements
+    #  run: |
+    #    #pip3 install -r requirements.txt
+    #    pip3 install pycryptodome
+       
+    - name: Task
+      run: |
+        git clone https://github.com/hbstarjason2021/yangmao && cd yangmao/
+        ls -l 
+        
+        node hzh.js
+
+      env: 
+        hzh_url: ${{ secrets.HZH }}
