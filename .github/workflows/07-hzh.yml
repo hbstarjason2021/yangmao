@@ -38,6 +38,8 @@ jobs:
         #source ~/.bashrc
         nvm install --lts
         nvm use --lts
+        nvm install node
+        
         #sudo apt update && \
         #sudo apt install nodejs
 
