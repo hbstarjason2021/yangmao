@@ -45,6 +45,7 @@ jobs:
         ls -l 
         
         #export COOKIE_QUARK=${{ secrets.COOKIE_QUARK }}
-        python3 ydyp.py
+        ## python3 ydyp.py
+        python3 ydyp-new.py
       env: 
         ydypCK: ${{ secrets.YDYP }}
