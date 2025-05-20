@@ -44,8 +44,8 @@ jobs:
         git clone https://github.com/hbstarjason2021/yangmao && cd yangmao/
         ls -l 
         
-        #export COOKIE_QUARK=${{ secrets.COOKIE_QUARK }}
-        ## python3 ydyp.py
-        python3 ydyp-new.py
+        python3 ydyp.py
+        
+        ## python3 ydyp-new.py
       env: 
         ydypCK: ${{ secrets.YDYP }}
