@@ -2,5 +2,12 @@
 # pip
 pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
  
-# pip
+# 
 pip install -r requirements.txt
+
+##
+sed -i  's/user/username/'  user_info.txt
+sed -i  's/pass/password/'  user_info.txt
+
+### 
+python digging_1step.py
