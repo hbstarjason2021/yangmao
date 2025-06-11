@@ -16,3 +16,6 @@ python digging_1step.py
 
 
 python check.py
+
+
+python digging_1step.py >> digging_1step_logs.txt 2>&1
