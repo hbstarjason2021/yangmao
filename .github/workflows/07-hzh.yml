@@ -64,7 +64,9 @@ jobs:
     #  run: |
     #   git clone https://github.com/hbstarjason2021/yangmao && cd yangmao/
     #   ls -l 
-        
+
+    ##### npm install -y axios  axios-cookiejar-support  sync-request
+    
     #   nodejs hzh.js
 
     #  env: 
