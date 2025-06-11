@@ -1,13 +1,16 @@
 
-# pip
+######### 
 pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
- 
-# 
-pip install -r requirements.txt
 
-##
-sed -i  's/user/username/'  user_info.txt
-sed -i  's/pass/password/'  user_info.txt
+#
+git clone https://github.com/hbstarjason2021/yangmao/ && cd yangmao/lianghua
 
-### 
+## 
+pip install -r requirements.txt  --break-system-packages
+
+###
+sed -i  's/email/user/'  user_info.txt
+sed -i  's/secret/pass/'  user_info.txt
+
+####
 python digging_1step.py
