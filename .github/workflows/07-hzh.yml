@@ -30,9 +30,13 @@ jobs:
        #cache: 'npm'
     - run: |
        node -v
+
+       export hzh_url="${{ secrets.HZH }}"
+       
        node hzh.js
-      env:
-         hzh_url: ${{ secrets.HZH }}
+       
+      #env:
+      #   hzh_url: ${{ secrets.HZH }}
       
     #- name: Install node
     #  run: |
