@@ -19,3 +19,7 @@ python check.py
 
 
 python digging_1step.py >> digging_1step_logs.txt 2>&1
+
+python digging_1step.py 2>&1  | tee -a digging_1step_logs.txt
+
+
