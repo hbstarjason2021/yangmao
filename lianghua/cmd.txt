@@ -17,6 +17,7 @@ python digging_1step.py
 
 python check.py >> check_logs.txt 2>&1
 
+python web-check.py >> web-check_logs.txt 2>&1
 
 python digging_1step.py >> digging_1step_logs.txt 2>&1
 
