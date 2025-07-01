@@ -53,8 +53,9 @@ jobs:
         #sudo apt update && \
         #sudo apt install nodejs
 
-        #curl -fsSL https://deb.nodesource.com/setup_22.x -o nodesource_setup.sh
-        #sudo -E bash nodesource_setup.sh
+        #curl -fsSL https://deb.nodesource.com/setup_22.x -o nodesource_setup.sh && sudo -E bash nodesource_setup.sh
+        
+        
         #curl -sL https://deb.nodesource.com/setup_22.x | sudo -E bash -
         #sudo apt update && sudo apt-get install -y nodejs
 
