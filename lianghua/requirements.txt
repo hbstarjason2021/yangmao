@@ -1,9 +1,0 @@
-pandas
-numpy
-requests
-pyyaml
-aiohttp
-asyncio
-aiofiles
-tqdm
-loguru
