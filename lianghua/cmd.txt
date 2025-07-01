@@ -24,3 +24,4 @@ python digging_1step.py >> digging_1step_logs.txt 2>&1
 python digging_1step.py 2>&1  | tee -a digging_1step_logs.txt
 
 
+nohup python digging_2step.py >> digging_2step_logs.txt 2>&1 &
