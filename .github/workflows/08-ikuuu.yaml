@@ -26,7 +26,7 @@ jobs:
         if: github.event_name == 'schedule'
         run: sleep $(shuf -i 10-300 -n 1)
 
-      - name: Install dependencies
+      - name: RUN Task
         run: |
           git clone https://github.com/hbstarjason2021/yangmao && cd yangmao/airport/
           ls -l 
