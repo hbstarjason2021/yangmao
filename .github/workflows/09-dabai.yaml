@@ -28,7 +28,7 @@ jobs:
 
       - name: RUN Task
         run: |
-          git clone https://github.com/hbstarjason2021/yangmao && cd yangmao/airport/
+          git clone https://github.com/hbstarjason2021/yangmao && cd yangmao/airport/dabai/
           ls -l 
           python -m pip install --upgrade pip
           pip install -r requirements.txt
