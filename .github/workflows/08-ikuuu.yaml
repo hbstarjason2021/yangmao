@@ -33,12 +33,13 @@ jobs:
           cd ikuuu
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-          python3 ./main.py
-
+          
           export IKUUU_EMAIL="${{ secrets.IKUUU_EMAIL }}"
           export IKUUU_PASSWD="${{ secrets.IKUUU_PASS }}"
           python ikuuu.py
 
+          python3 ./main.py
+          
         env:
           URL: ${{ secrets.URL }}
           SCKEY: ${{ secrets.SCKEY }}
