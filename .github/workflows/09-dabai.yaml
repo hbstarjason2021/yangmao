@@ -32,6 +32,11 @@ jobs:
           ls -l 
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+
+          export EMAIL_DABAI="${{ secrets.IKUUU_EMAIL }}"
+          export PASSWORD_DABAI="${{ secrets.IKUUU_PASS }}"
+          python dabai.py
+          
           python3 ./main.py
         env:
           URL: ${{ secrets.URL_DABAI }}
