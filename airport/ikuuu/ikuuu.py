@@ -341,8 +341,8 @@ def main():
 3. 邮箱和密码要一一对应
 
 示例:
-IKUUU_EMAIL=user1@example.com,user2@example.com
-IKUUU_PASSWD=password1,password2
+IKUUU_EMAIL=user1@example.com#user2@example.com
+IKUUU_PASSWD=password1#password2
 
 💡 提示: 请确保邮箱和密码数量一致且顺序对应
 🌐 当前域名: ikuuu.de"""
