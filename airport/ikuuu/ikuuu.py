@@ -318,11 +318,11 @@ def main():
     print(f"🔒 隐私保护模式: {'已启用' if privacy_mode else '已禁用'}")
     
     # 随机延迟（整体延迟）
-    if random_signin:
-        delay_seconds = random.randint(0, max_random_delay)
-        if delay_seconds > 0:
-            print(f"🎲 随机延迟: {format_time_remaining(delay_seconds)}")
-            wait_with_countdown(delay_seconds, "ikuuu签到")
+    #if random_signin:
+    #    delay_seconds = random.randint(0, max_random_delay)
+    #    if delay_seconds > 0:
+    #        print(f"🎲 随机延迟: {format_time_remaining(delay_seconds)}")
+    #        wait_with_countdown(delay_seconds, "ikuuu签到")
     
     # 获取账号配置
     emails = IKUUU_EMAIL.split('#') if IKUUU_EMAIL else []
@@ -375,10 +375,10 @@ IKUUU_PASSWD=password1,password2
     for index, (email, passwd) in enumerate(zip(emails, passwords)):
         try:
             # 账号间随机等待
-            #if index > 0:
-            #    delay = random.uniform(5, 15)
-            #    print(f"⏱️  随机等待 {delay:.1f} 秒后处理下一个账号...")
-            #    time.sleep(delay)
+            if index > 0:
+                delay = random.uniform(5, 15)
+                print(f"⏱️  随机等待 {delay:.1f} 秒后处理下一个账号...")
+                time.sleep(delay)
             
             # 执行签到
             signer = IkuuuSigner(email, passwd, index + 1)
