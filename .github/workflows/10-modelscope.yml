@@ -1,0 +1,23 @@
+name: 魔搭保活防休眠
+on:
+  schedule:
+    - cron: '*/20 * * * *'
+  workflow_dispatch:
+
+jobs:
+  keepalive:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 访问魔搭创空间
+        run: |
+          for i in 1 2 3; do
+            code=$(curl -s --connect-timeout 15 -w "%{http_code}" "https://modelscope.cn/studios/iic/copa/summary" -o /dev/null)
+            if [ "$code" = "200" ]; then
+              echo "✅ 第 $i 次尝试：唤醒成功！"
+              exit 0
+            fi
+            echo "⚠️ 第 $i 次失败，等待8秒后重试..."
+            sleep 8
+          done
+          echo "❌ 3次尝试均失败"
+          exit 1
