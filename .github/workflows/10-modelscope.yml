@@ -1,7 +1,7 @@
 name: 魔搭保活防休眠
 on:
-  schedule:
-    - cron: '*/20 * * * *'
+  #schedule:
+  #  - cron: '*/20 * * * *'
   workflow_dispatch:
 
 jobs:
