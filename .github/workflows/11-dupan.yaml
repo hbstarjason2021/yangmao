@@ -15,7 +15,7 @@ on:
   #    types: started   
 
 jobs:
-  ydyp:
+  baidu_wangpan:
     runs-on: ubuntu-latest
     #if: github.event.repository.owner.id == github.event.sender.id
     # https://p3terx.com/archives/github-actions-manual-trigger.html
@@ -47,4 +47,4 @@ jobs:
         python3 baiduwangpan_checkin.py
         
       env: 
-        yBAIDU_COOKIE: ${{ secrets.BAIDU_COOKIE }}
+        BAIDU_COOKIE: ${{ secrets.BAIDU_COOKIE }}
